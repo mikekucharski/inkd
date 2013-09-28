@@ -1,0 +1,33 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+
+#wrap
+{
+	min-height:100%;
+	background: url(../res/bgm.jpg);
+}
+
+#main
+{
+	padding-bottom:50px;
+}
+
+#footer
+{
+	background: url(../res/bghf.png);
+	position: relative;
+	margin-top: -50px; 
+	height: 50px;
+	box-shadow: -1px -1px 15px #000000;
+	clear:both;
+}
+
+#nav_search_bar
+{
+	height:30px;
+	width:250px;
+	padding-top:5px;
+}

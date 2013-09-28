@@ -1,7 +1,8 @@
+<!-- register -->
 <html>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="css/login_style.css">
 		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 		<title>Register</title>
 	<head>
@@ -14,16 +15,36 @@
 			</div>
 			
 			<div id="main">
-				<div id="login_form">
+				<div class="register_form login_form">
 					<h1>Get Ink'd</h1>
 					<form id="register" action="#" method="POST">
-						<input name='first' type="text" placeholder="First Name"/> <br>
-						<input name='last' type="text" placeholder="Last Name"/> <br>
-						<input name='email' type="text" placeholder="Email" /> <br>
-						<input name='password' type="password" placeholder="Password"/> <br>
-						<input name='password2' type="password" placeholder="Confirm Password"/> <br>
-						<input name='submit' type="submit" value="Register"/>
+						<table>
+							<tr>
+								<td><label>First Name:</label></td>
+								<td><input name='first' type="text" placeholder="First Name"/></td>
+							</tr>
+							<tr>
+								<td><label>Last Name:</label></td>
+								<td><input name='last' type="text" placeholder="Last Name"/> </td>
+							</tr>
+							<tr>
+								<td><label>Email:</label></td>
+								<td><input name='email' type="text" placeholder="Email" /> </td>
+							</tr>
+							<tr>
+								<td><label>Password:</label></td>
+								<td><input name='password' type="password" placeholder="Password"/> </td>
+							</tr>
+							<tr>
+								<td><label>Confirm Password:</label></td>
+								<td><input name='password2' type="password" placeholder="Confirm Password"/> </td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input name='submit' type="submit" value="Register"/></td>
+							</tr>
 						
+						</table>
 					</form>
 				</div>
 

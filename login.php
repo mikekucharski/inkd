@@ -1,7 +1,8 @@
+<!-- login -->
 <html>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="css/login_style.css">
 		
 		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 		<title>Log In</title>
@@ -15,7 +16,7 @@
 			</div>
 			
 			<div id="main">
-				<div id="login_form">
+				<div class="login_form">
 					<h1>Sign In</h1>
 					<form action="#" method="POST">
 						<input name='user' type="text" placeholder="Username"/>

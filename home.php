@@ -5,10 +5,14 @@
 		
 		<!-- Bootstrap CSS-->
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<!-- Bootstrap-lightbox CSS-->
+		<link href="bootstrap/bootstrap-lightbox/bootstrap-lightbox.min.css" rel="stylesheet" media="screen">
 		
 		<!-- Bootstrap JS-->
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<!-- Bootstrap-lightbox JS-->
+		<script src="bootstrap/bootstrap-lightbox/bootstrap-lightbox.min.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="css/template.css">
 		<title>Log In</title>
@@ -17,16 +21,16 @@
 	<body>
 		
 		<div id="wrap">
-			<div id="main">
+			<div id="header">
 				<div class="navbar navbar-fixed-top navbar-inverse">
-					  <div class="navbar-inner">
+					<div class="navbar-inner">
 						<div class="container">
 						  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </a>
-						  <a class="brand" href="#">Project Name</a>
+						  <a class="brand" href="home.php">Ink'd</a>
 						  <div class="nav-collapse">
 							<ul class="nav">
 							  <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
@@ -42,17 +46,71 @@
 							  </li>
 							</ul>
 							<form class="navbar-search pull-right" action="">
-							  <input id="nav_search_bar" type="text" class="search-query span2" placeholder="Search">
+							  <input id="nav_search_bar" type="text" class="search-query span3" placeholder="Search" data-provide="typeahead" autocomplete="off">
 							</form>
 						  </div><!-- /.nav-collapse -->
 						</div><!-- /.container -->
-					  </div><!-- /.navbar-inner -->
-					</div><!-- /.navbar -->
-				</div>
-			</div>
-			</div>
+					</div><!-- /.navbar-inner -->
+				</div><!-- /.navbar -->
+			</div><!-- end header -->
+			
+			<div id="main">
+				<div class="container-fluid">
+				    <div class="row-fluid">
+						<div id="left_bar" class="span3">
+							<!--Sidebar content-->
+							<ul>
+							  <li class="span7">
+								<a class="thumbnail" data-toggle="lightbox" href="#demoLightbox">
+								  <img src="res/mike.jpg" alt="">
+								</a>
+							  </li>
 
-		</div>
+							</ul>
+							
+							<div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+								<div class='lightbox-content'>
+									<img src="res/mike.jpg">
+									<div class="lightbox-caption"><p>Your profile picture.</p></div>
+								</div>
+							</div>
+
+						</div> <!-- End leftbar -->
+						
+						<div id="right_bar" class="span9">
+							<!--Body content-->
+							<p> hey what is up to </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> hey </p>
+							<p> yo </p>
+							<p> yo </p>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div><!-- /main -->
+		</div><!--/wrap -->
+
 
 		<div id="footer">
 

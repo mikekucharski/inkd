@@ -1,0 +1,117 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+
+#wrap
+{
+	min-height:100%;
+	background: url(../res/bgm.jpg);
+}
+
+#header
+{
+	overflow:auto;
+	background: url(../res/bghf.png);
+	height:100px;
+	box-shadow: 2px 2px 25px #000000;
+}
+
+#main
+{
+
+	padding-bottom:50px;
+}
+
+#footer
+{
+	background: url(../res/bghf.png);
+	position: relative;
+	margin-top: -50px; 
+	height: 50px;
+	box-shadow: -1px -1px 15px #000000;
+	clear:both;
+}
+
+#login_form
+{
+	text-align:center;
+	display:block;
+	width:700px;
+	margin: 0 auto;
+	margin-top:180px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#bdecff),
+            color-stop(90%,#94d2eb));
+	border-radius:7px;
+	border:1px solid purple;
+	box-shadow: 4px 4px 10px #888888;
+}
+
+#login_form h1{
+	font-family: 'Raleway', ariel, serif;
+	font-size: 24px;
+	padding:10px;
+}
+
+#login_form p
+{
+	padding:4px;
+	font-size:17px;
+}
+
+#login_form p a
+{
+	text-decoration:none;
+	color:blue;
+	
+}
+
+#login_form p a:hover
+{
+	text-decoration:underline;
+	color:darkblue;
+}
+
+
+
+input[type="text"], input[type="password"]
+{
+	padding:10px;
+	margin:7px;
+	width:250px;
+	height:40px;
+	font-size:18px;
+	border-radius:5px;
+	border:none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus
+{
+	outline:none;
+	background:#f9f7fc;
+	border:2px solid purple;
+}
+
+input[type="submit"], input[type="button"]
+{
+	padding:10px;
+	margin:7px;
+	width:100px;
+	height:40px;
+	font-size:18px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#a2bce8),
+            color-stop(90%,#4b7bcf));
+	border:1px solid white;
+	color:white;
+	border-radius:5px;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover
+{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#88abe8),
+            color-stop(90%,#4b7bcf));
+	cursor:pointer;
+}
+
+

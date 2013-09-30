@@ -26,7 +26,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </a>
-						  <a class="brand" href="#">Project Name</a>
+						  <a class="brand" href="#">Ink'd</a>
 						  <div class="nav-collapse">
 							<ul class="nav">
 							  <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>

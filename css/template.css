@@ -12,7 +12,10 @@
 
 #main
 {
+	padding-top: 65px;
 	padding-bottom:50px;
+	width:70%;
+	margin:auto;
 }
 
 #footer
@@ -28,6 +31,23 @@
 #nav_search_bar
 {
 	height:30px;
-	width:250px;
 	padding-top:5px;
+}
+
+#left_bar
+{
+	
+	background-color:yellow;
+}
+
+#right_bar
+{
+	
+	background-color:orange;
+}
+
+#prof_img
+{
+	margin:auto;
+	display:inline-block;
 }

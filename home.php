@@ -30,23 +30,24 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </a>
+
 						  <a class="brand" href="home.php">Ink'd</a>
+
 						  <div class="nav-collapse">
 							<ul class="nav">
 							  <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
-							  <li><a href="#">Link</a></li>
-							  <li><a href="#">Link</a></li>
-							  <li><a href="#">Link</a></li>
+							  <li><a href="#"><i class="icon-user icon-white"></i> Profile</a></li>
+							  <li><a href="#"><i class="icon-globe icon-white"></i> Friends</a></li>
 							  <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-wrench icon-white"></i> Settings<b class="caret"></b></a>
 								<ul class="dropdown-menu">
-								  <li><a href="#">Action</a></li>
-								  <li><a href="#">Another action</a></li>
+								  <li><a href="#">Profile Settings</a></li>
+								  <li><a href="#">Account Settings</a></li>
 								</ul>
 							  </li>
 							</ul>
 							<form class="navbar-search pull-right" action="">
-							  <input id="nav_search_bar" type="text" class="search-query span3" placeholder="Search" data-provide="typeahead" autocomplete="off">
+							  <input id="nav_search_bar" type="text" class="search-query span4" placeholder="Search" data-provide="typeahead" autocomplete="off">
 							</form>
 						  </div><!-- /.nav-collapse -->
 						</div><!-- /.container -->
@@ -57,7 +58,7 @@
 			<div id="main">
 				<div class="container-fluid">
 				    <div class="row-fluid">
-						<div id="left_bar" class="span3">
+						<div id="panel" class="span4">
 							<!--Sidebar content-->
 							<ul>
 							  <li class="span7">
@@ -67,43 +68,108 @@
 							  </li>
 
 							</ul>
-							
-							<div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-								<div class='lightbox-content'>
-									<img src="res/mike.jpg">
-									<div class="lightbox-caption"><p>Your profile picture.</p></div>
-								</div>
-							</div>
 
 						</div> <!-- End leftbar -->
 						
-						<div id="right_bar" class="span9">
+						<div  class="span7">
 							<!--Body content-->
-							<p> hey what is up to </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> hey </p>
-							<p> yo </p>
-							<p> yo </p>
+							<div id= "ink_spill">
+								<form>
+									<textarea type="textarea" name='ink' placeholder="Spill some ink"></textarea>
+									<input type='submit' name="ink" value="Ink"/>
+								</form>
+							</div>
 							
+							<!--Ink Div-->
+							<div id='ink'>
+							
+								<!-- Profile Image -->
+								<div id="prof_img">
+									<img src='res/default_profile.jpg' alt='empty'/>
+								</div>
+								
+								<!-- Ink Header -->
+								<div id='ink_header'>
+									<div id='header_left'>
+										<span>Mike Kucharski</span>
+									</div>
+									<div id='header_right'>
+										<span>10/10/13 12:00 PM</span>
+									</div>
+								</div>
+								
+								<!-- Ink Post -->
+								<div id="ink_post">
+									<p>Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!</p>
+								</div>
+								
+								<!-- Ink Options -->
+								<div id="ink_options">
+									<a href='#'><span class="label-important label"><i class="icon-heart icon-white"></i></span> Like</a>
+									<a href='#'><span class="label-info label"><i class="icon-tint icon-white"></i></span> Re-Ink</a>
+									<a href='#'><span class="label-success label"><i class="icon-comment icon-white"></i></span> Comment</a>
+								</div>
+							</div>
+							
+							<div id='ink'>
+							
+								<!-- Profile Image -->
+								<div id="prof_img">
+									<img src='res/default_profile.jpg' alt='empty'/>
+								</div>
+								
+								<!-- Ink Header -->
+								<div id='ink_header'>
+									<div id='header_left'>
+										<span>Mike Kucharski</span>
+									</div>
+									<div id='header_right'>
+										<span>10/10/13 12:00 PM</span>
+									</div>
+								</div>
+								
+								<!-- Ink Post -->
+								<div id="ink_post">
+									<p>Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!</p>
+								</div>
+								
+								<!-- Ink Options -->
+								<div id="ink_options">
+									<a href='#'><span class="label-important label"><i class="icon-heart icon-white"></i></span> Like</a>
+									<a href='#'><span class="label-info label"><i class="icon-tint icon-white"></i></span> Re-Ink</a>
+									<a href='#'><span class="label-success label"><i class="icon-comment icon-white"></i></span> Comment</a>
+								</div>
+							</div>
+							
+							<div id='ink'>
+							
+								<!-- Profile Image -->
+								<div id="prof_img">
+									<img src='res/default_profile.jpg' alt='empty'/>
+								</div>
+								
+								<!-- Ink Header -->
+								<div id='ink_header'>
+									<div id='header_left'>
+										<span>Mike Kucharski</span>
+									</div>
+									<div id='header_right'>
+										<span>10/10/13 12:00 PM</span>
+									</div>
+								</div>
+								
+								<!-- Ink Post -->
+								<div id="ink_post">
+									<p>Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!</p>
+								</div>
+								
+								<!-- Ink Options -->
+								<div id="ink_options">
+									<a href='#'><span class="label-important label"><i class="icon-heart icon-white"></i></span> Like</a>
+									<a href='#'><span class="label-info label"><i class="icon-tint icon-white"></i></span> Re-Ink</a>
+									<a href='#'><span class="label-success label"><i class="icon-comment icon-white"></i></span> Comment</a>
+								</div>
+							</div>
 							
 						</div>
 					</div>

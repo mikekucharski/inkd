@@ -57,7 +57,7 @@
 			<div id="main">
 				<div class="container-fluid">
 				    <div class="row-fluid">
-						<div id="left_bar" class="span3">
+						<div id="left_bar" class="span4">
 							<!--Sidebar content-->
 							<ul>
 							  <li class="span7">
@@ -77,7 +77,7 @@
 
 						</div> <!-- End leftbar -->
 						
-						<div id="right_bar" class="span9">
+						<div id="right_bar" class="span8">
 							<!--Body content-->
 							<p> hey what is up to </p>
 							<p> hey </p>

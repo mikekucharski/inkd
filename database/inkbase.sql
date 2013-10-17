@@ -1,6 +1,6 @@
 /*DElete database if exists and creat a new one*/
 DROP DATABASE IF EXISTS inkbase;
-CREAT DATABASE inkbase;
+CREATE DATABASE inkbase;
 
 USE inkbase;
 
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `user`
 	last_name VARCHAR(20) NOT NULL,
 	email VARCHAR (60) NOT NULL,
 	pasword VARCHAR(25) NOT NULL,
-	PRIMARY_KEY (u_id),
+	PRIMARY KEY (u_id)
 );
 
 CREATE TABLE IF NOT EXISTS user_info
@@ -22,17 +22,18 @@ CREATE TABLE IF NOT EXISTS user_info
 	school VARCHAR(50) NOT NULL,
 	Work_place VARCHAR(50) NOT NULL,
 	birthday DATE NOT NULL,
-	u_id int(10) NOT NULL AUTO_INCREMENT
+	u_id int(10) NOT NULL,
 	description TEXT,
-	PRIMARY_KEY (ui_id),
+	PRIMARY KEY (ui_id),
 	FOREIGN KEY (u_id) REFERENCES `user`(u_id) ON DELETE CASCADE
 );
 
-CREAT TABLE IF NOT EXISTS friend
+CREATE TABLE IF NOT EXISTS friend
 (
 	f_id int(10) NOT NULL AUTO_INCREMENT,
-	u_id int(10) NOT NULL AUTO_INCREMENT,
-	u_idf int(10) NOT NULL AUTO_INCREMENT
+	u_id int(10) NOT NULL,
+	u_idf int(10) NOT NULL,
+	PRIMARY KEY (f_id),
 	FOREIGN KEY (u_id) REFERENCES `user`(u_id) ON DELETE CASCADE,
 	FOREIGN KEY (u_idf) REFERENCES `user`(u_id) ON DELETE CASCADE
 );

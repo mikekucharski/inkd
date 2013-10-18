@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `user`
 	first_name VARCHAR(20) NOT NULL,
 	last_name VARCHAR(20) NOT NULL,
 	email VARCHAR (60) NOT NULL,
-	pasword VARCHAR(25) NOT NULL,
+	password VARCHAR(25) NOT NULL,
 	PRIMARY KEY (u_id)
 );
 

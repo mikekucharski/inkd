@@ -1,3 +1,5 @@
+<?php include('scripts/is_logged_in.php'); ?>
+
 <html>
 	<head>
 		
@@ -45,6 +47,7 @@
 								  <li><a href="#">Account Settings</a></li>
 								</ul>
 							  </li>
+							  <li><a href="scripts/logout.php"><i class="icon-off icon-white"></i> Logout</a></li>
 							</ul>
 							<form class="navbar-search pull-right" action="">
 							  <input id="nav_search_bar" type="text" class="search-query span4" placeholder="Search" data-provide="typeahead" autocomplete="off">

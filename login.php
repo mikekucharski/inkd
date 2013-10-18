@@ -23,8 +23,8 @@
 			<div id="main">
 				<div class="login_form">
 					<h1>Sign In</h1>
-					<form action="#" method="POST">
-						<input name='user' type="text" placeholder="Username"/>
+					<form action="scripts/confirm_login.php" method="POST">
+						<input name='email' type="text" placeholder="Email"/>
 						<input name='pass' type="password" placeholder="Password"/>
 						<input name='login' type="submit" value="Sign In"/><br>
 					</form>

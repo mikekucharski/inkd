@@ -62,7 +62,7 @@
 	border-radius:5px;
 }
 
-#ink
+#ink, #column
 {
 	background:white;
 	overflow:auto;
@@ -139,14 +139,65 @@
 	color:grey;
  }
  
- 
- 
+
  #ink_options a 
   {
 	padding-left:20px;
+	
  }
  
  #ink_options a:hover
  {
 	text-decoration:none;
  }
+ 
+#column h1
+{
+	text-align:center;
+}
+ 
+#form_table 
+{
+	margin:auto;
+	border:none;
+	font-family:'Raleway', sans, serif;
+}
+
+#form_table  label
+{
+	width:100%;
+	display:inline-block;
+	text-align: right; 
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#form_table input[type="text"]
+{
+	width:250px;
+	height:35px;
+	font-size:14px;
+	padding:10px;
+	margin:7px;
+}
+
+#form_table  input[type="submit"]
+{	
+	color:white;
+	box-shadow:1px 1px 5px #888888;
+	border:none;
+	font-size:14px;
+	width:120px;
+	height:25px;
+	border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#2fc900), color-stop(90%,#259e00));
+	margin:7px;
+}
+
+#form_table  input[type="submit"]:hover
+{
+	cursor:pointer;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#5fd13d), color-stop(90%,#259e00));
+}

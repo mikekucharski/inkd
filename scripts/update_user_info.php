@@ -45,7 +45,11 @@
 	require_once __DIR__ . '/db_connect.php';
 	$db = new DB_CONNECT();
 	
+<<<<<<< HEAD
 	$query= "UPDATE user_info SET hometown='$hometown',location='$location', school=$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
+=======
+	$query="UPDATE user_info SET hometown='$hometown',location='$location', school=$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
+>>>>>>> eee160c5157cc5aa5c48abaae02e2d0a92643ab3
 	$result=mysql_query($query);
 	
 	if($result)

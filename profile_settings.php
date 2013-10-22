@@ -1,16 +1,16 @@
-<?php include('scripts/is_logged_in.php'); ?>
+<?php include('includes/is_logged_in.php'); ?>
 
 <html>
 <head>
 	
-	<?php include('scripts/head.php'); ?>
+	<?php include('includes/head.php'); ?>
 	<title>Profile Settings</title>
 <head>
 
 <body>
 	
 	<div id="wrap">
-		<?php include('scripts/header.php'); ?>
+		<?php include('includes/header.php'); ?>
 		
 		<div id="main">
 			<div id="column" class="container">

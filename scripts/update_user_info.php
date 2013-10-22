@@ -7,7 +7,7 @@
 	$birthday='';
 	$description='';
 		
-	if (isset($_GET['u_id'] && !empty($_GET['u_id']))
+	if (isset($_GET['u_id']) && !empty($_GET['u_id']))
 	{
 		$u_id=$_GET['u_id'];
 	}
@@ -45,17 +45,17 @@
 	require_once __DIR__ . '/db_connect.php';
 	$db = new DB_CONNECT();
 	
-	$query= ("UPDATE user_info SET hometown='$hometown',location='$location', school=$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
+	$query="UPDATE user_info SET hometown='$hometown',location='$location', school=$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
 	$result=mysql_query($query);
 	
 	if($result)
 	{
-		header('location:../profile_settings.php?error=invalid_uid?updated=1');
+		header('location:../profile_settings.php?updated=1');
 		exit();
 	}
 	else 
 	{
-		header('location:../profile_settings.php?error=invalid_uid?error=query_fail');
+		header('location:../profile_settings.php?error=query_fail');
 		exit();
 	}
 	

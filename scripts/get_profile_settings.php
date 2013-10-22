@@ -13,15 +13,15 @@ if (!empty($result) &&	mysql_num_rows($result) > 0)
 {
 	$row = mysql_fetch_array($result);
 	
-	$hometown = $row['home_town'];
-	$location = $row['current_location'];
+	$hometown = $row['hometown'];
+	$location = $row['location'];
 	$school = $row['school'];
-	$workplace = $row['Work_place'];
+	$workplace = $row['workplace'];
 	$birthday = $row['birthday'];
 	$description = $row['description'];
 	
 	print "
-	<form action='#' method='get'>
+	<form action='scripts/update_user_info.php' method='get'>
 		<table id='form_table'>
 		<tr>
 			<td><label>Hometown:</label></td>

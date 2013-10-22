@@ -30,11 +30,18 @@
 			
 			$query = "INSERT INTO user(first_name, last_name, email, password) VALUES('$first', '$last', '$email', '$password')";
 			$result = mysql_query($query);
+			$last_id= mysql_insert_id();
 			
+			$query2 = "INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES('$last_id','','','','','','')";
+			$result2 = mysql_query($query2);
 			// check if row inserted or not
-			if ($result) 
+			if ($result && $result2) 
 			{
 				// successfully inserted into database
+				SESSION_START();
+				$_SESSION['logged_in']=true;
+				$_SESSION['u_id']=$last_id;
+				$_SESSION['first_name']=$first;
 				header("location:../home.php?new_acc=true");
 				exit();
 			} else {

@@ -1,5 +1,5 @@
 <?php
-	
+
 	if (isset($_POST["first"]) && !empty($_POST["first"]) 
 		&& isset($_POST["last"]) && !empty($_POST["last"])
 		&& isset($_POST["email"]) && !empty($_POST["email"])
@@ -11,7 +11,9 @@
 		$email = $_POST["email"];
 		$password = $_POST["password"];
 		$password2 = $_POST["password2"];
-
+		
+	
+		
 		if($password != $password2){
 			header("location:../register.php?error=password_match");
 			exit();
@@ -24,12 +26,24 @@
 		}else{
 			//All good, save data
 			
+			//Salt the password
+			
+			define('SALT_LENGTH', 20);
+			$salt='';
+			$character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+			for ($i=0; $i<20; $i++)
+			{
+				$salt.=$character[rand(0, strlen($character))-1];
+			}
+			
+			$password = hash('sha256', $salt.$password);
+			
 			//connect to database
 			require_once __DIR__ . '/db_connect.php';
 			$db = new DB_CONNECT();
 			
-			$query = "INSERT INTO user(first_name, last_name, email, password) VALUES('$first', '$last', '$email', '$password')";
-			$result = mysql_query($query);
+			$query = "INSERT INTO user(first_name, last_name, email, password, salt) VALUES('$first', '$last', '$email', '$password', '$salt')";
+			$result = mysql_query($query) or die(mysql_error());
 			$last_id= mysql_insert_id();
 			
 			$query2 = "INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES('$last_id','','','','','','')";

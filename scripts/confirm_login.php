@@ -17,7 +17,7 @@
 		{
 			$row = mysql_fetch_array($result);
 		
-			if($password==$row['password'])
+			if(hash('sha256', $row['salt'].$password)==$row['password'])
 			{
 				SESSION_START();
 				$_SESSION['logged_in']=true;

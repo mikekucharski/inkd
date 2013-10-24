@@ -1,4 +1,4 @@
-/*DElete database if exists and creat a new one*/
+/*DElete database if exists and create a new one*/
 DROP DATABASE IF EXISTS inkbase;
 CREATE DATABASE inkbase;
 

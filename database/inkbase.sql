@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS `user`
 	PRIMARY KEY (u_id)
 );
 
+/*INSERT INTO `user` VALUES ('1', 'Mike', 'Kucharski', 'kucharskim@wit.edu', 'test123');*/
+
 CREATE TABLE IF NOT EXISTS user_info
 (
 	ui_id int(10) NOT NULL AUTO_INCREMENT,
@@ -27,6 +29,8 @@ CREATE TABLE IF NOT EXISTS user_info
 	PRIMARY KEY (ui_id),
 	FOREIGN KEY (u_id) REFERENCES `user`(u_id) ON DELETE CASCADE
 );
+
+/*INSERT INTO user_info VALUES ('1', '1', 'East Haven','Boston', 'Wentworth','Brightcove', '0000-00-00', 'Cool Description');*/
 
 CREATE TABLE IF NOT EXISTS friend
 (

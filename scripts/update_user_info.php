@@ -6,16 +6,9 @@
 	$workplace='';
 	$birthday='';
 	$description='';
-		
-	if (isset($_GET['u_id']) && !empty($_GET['u_id']))
-	{
-		$u_id=$_GET['u_id'];
-	}
-	else 
-	{
-		header('location:../profile_settings.php?error=invalid_uid');
-		exit();
-	}
+
+	session_start();
+	$u_id = $_SESSION['u_id'];
 	
 	if (isset($_GET['hometown']) && !empty($_GET['hometown']))
 	{
@@ -45,7 +38,7 @@
 	require_once __DIR__ . '/db_connect.php';
 	$db = new DB_CONNECT();
 	
-	$query="UPDATE user_info SET hometown='$hometown',location='$location', school=$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
+	$query="UPDATE user_info SET hometown='$hometown',location='$location', school='$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
 	$result=mysql_query($query);
 	
 	if($result)

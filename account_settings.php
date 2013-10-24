@@ -17,6 +17,32 @@
 				<h1>Account Settings</h1>
 				
 				<?php include('scripts/get_account_settings.php'); ?>
+				
+				<?php
+					if(isset($_GET['updated']) && !Empty($_GET['updated']))
+					{
+						$updated = $_GET['updated'];
+						if($updated == 1)
+						{
+							print "
+								<div id='alert' class='alert alert-success'>
+									<p><b>Success!</b> Your profile settings have been updated.</p>
+								</div>
+							";
+						}
+					}
+					
+					else if(isset($_GET['error']) && !Empty($_GET['error']))
+					{
+						$error = $_GET['error'];
+						print "
+							<div id='alert' class='alert alert-error'>
+								<p><b>OOPS!</b> Something has gone wrong. Your profile settings were not updated.</p>
+							</div>
+						";
+					}
+				?>
+				
 			</div><!-- /column -->
 		</div><!-- /main -->
 	</div><!--/wrap -->

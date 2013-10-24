@@ -165,13 +165,13 @@
 
 #form_table  label
 {
-	width:100%;
 	display:inline-block;
 	text-align: right; 
 	padding-top:10px;
 	padding-bottom:10px;
 	font-size:14px;
 	font-weight:bold;
+	width:160px;
 }
 
 #form_table input[type="text"]
@@ -200,4 +200,12 @@
 {
 	cursor:pointer;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#5fd13d), color-stop(90%,#259e00));
+}
+
+#alert
+{
+	width:500px;
+	display:block;
+	margin:auto;
+	text-align:center;
 }

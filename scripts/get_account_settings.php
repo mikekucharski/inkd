@@ -19,7 +19,7 @@ if (!empty($result) &&	mysql_num_rows($result) > 0)
 	$password = $row['password'];
 	
 	print "
-	<form action='#' method='get'>
+	<form action='scripts/update_user.php' method='post'>
 		<table id='form_table'>
 		<tr>
 			<td><label>First Name:</label></td>
@@ -34,6 +34,17 @@ if (!empty($result) &&	mysql_num_rows($result) > 0)
 			<td><input type='text' name='email' value='$email'></input></td>
 		</tr>
 		<tr>
+			<td></td>
+			<td><input type='submit' name='submit' value='Apply Changes'></input></td>
+		</tr>
+		</table>
+	</form>
+	";
+	
+	print "
+	<form action='#' method='post'>
+		<table id='form_table'>
+		<tr>
 			<td><label>Current Password:</label></td>
 			<td><input type='text' name='current_password'></td>
 		</tr>
@@ -47,7 +58,7 @@ if (!empty($result) &&	mysql_num_rows($result) > 0)
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type='submit' name='submit' value='Apply Changes'></input></td>
+			<td><input type='submit' name='submit' value='Change Password'></input></td>
 		</tr>
 		</table>
 	</form>

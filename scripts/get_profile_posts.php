@@ -1,0 +1,63 @@
+<?php
+	
+	error_reporting(0);
+	
+	if(isset($_GET['u_id']) &&!empty($_GET['u_id']))
+	{
+		$u_id = $_GET['u_id'];
+		
+		//connect to database
+		require_once __DIR__ . '/db_connect.php';
+		$db = new DB_CONNECT();
+		
+		$query = "SELECT * FROM post WHERE u_id='$u_id' ORDER BY post_time DESC";
+		$result = mysql_query($query);
+		
+		if (!empty($result) &&	mysql_num_rows($result) > 0) 
+		{
+			while($row = mysql_fetch_array($result))
+			{
+				$p_id = $row['p_id'];
+				$u_id = $row['u_id'];
+				$msg = $row['message'];
+				$time = $row['post_time'];
+				print "
+					<!--Ink Div-->
+					<div id='ink'>
+						<!-- Profile Image -->
+						<div id='prof_img'>
+							<img src='res/default_profile.jpg' alt='empty'/>
+						</div>
+
+						<!-- Ink Header -->
+						<div id='ink_header'>
+							<div id='header_left'>
+								<span>Mike Kucharski</span>
+							</div>
+							<div id='header_right'>
+								<span>{$time}</span>
+							</div>
+						</div>
+						
+						<!-- Ink Post -->
+						<div id='ink_post'>
+							<p>{$msg}</p>
+						</div>
+						
+						<!-- Ink Options -->
+						<div id='ink_options'>
+							<a href='#'><span class='label-important label'><i class='icon-heart icon-white'></i></span> Like</a>
+							<a href='#'><span class='label-info label'><i class='icon-tint icon-white'></i></span> Re-Ink</a>
+							<a href='#'><span class='label-success label'><i class='icon-comment icon-white'></i></span> Comment</a>
+						</div>
+					</div>
+				";
+			}
+			
+		}
+	}else
+	{
+		header('location:404.php');
+	}
+	
+?>

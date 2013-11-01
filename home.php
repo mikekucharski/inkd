@@ -4,7 +4,6 @@
 <head>
 	
 	<?php include('includes/head.php'); ?>
-
 	<title>Home</title>
 <head>
 
@@ -35,11 +34,12 @@
 
 						<!--Body content-->
 						<div id= "ink_spill">
-							<form>
-								<textarea type="textarea" name='ink' placeholder="Spill some ink"></textarea>
+							<form method='POST' action='scripts/create_post.php' >
+								<textarea type="textarea" name='post' placeholder="Spill some ink"></textarea>
 								<input type='submit' name="ink" value="Ink"/>
 							</form>
 						</div>
+						
 						
 						<!--Ink Div-->
 						<div id='ink'>

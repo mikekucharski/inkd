@@ -17,7 +17,7 @@
 		
 		<div id="wrap">
 			<div id="header">
-
+				 <img src="res/logo.png" alt="Logo">
 			</div>
 			
 			<div id="main">

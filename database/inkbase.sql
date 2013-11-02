@@ -1,5 +1,4 @@
-/*Delete database if exists and create a new one*/
-
+/*DElete database if exists and creat a new one*/
 DROP DATABASE IF EXISTS inkbase;
 CREATE DATABASE inkbase;
 
@@ -47,8 +46,7 @@ CREATE TABLE IF NOT EXISTS post (
 	message text NOT NULL,
 	post_time DATETIME NOT NULL,
 	PRIMARY KEY (p_id),
-	FOREIGN KEY (u_id) REFERENCES `user`(u_id) ON DELETE CASCADE,
-	FOREIGN KEY (repost_id) REFERENCES post(p_id) ON DELETE CASCADE
+	FOREIGN KEY (u_id) REFERENCES `user`(u_id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS like_post (

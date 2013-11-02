@@ -1,4 +1,5 @@
-/*DElete database if exists and create a new one*/
+/*Delete database if exists and create a new one*/
+
 DROP DATABASE IF EXISTS inkbase;
 CREATE DATABASE inkbase;
 
@@ -10,11 +11,10 @@ CREATE TABLE IF NOT EXISTS `user`
 	first_name VARCHAR(20) NOT NULL,
 	last_name VARCHAR(20) NOT NULL,
 	email VARCHAR (60) NOT NULL,
-	password VARCHAR(25) NOT NULL,
+	password VARCHAR(64) NOT NULL,
+	salt VARCHAR(20) NOT NULL,
 	PRIMARY KEY (u_id)
 );
-
-/*INSERT INTO `user` VALUES ('1', 'Mike', 'Kucharski', 'kucharskim@wit.edu', 'test123');*/
 
 CREATE TABLE IF NOT EXISTS user_info
 (
@@ -29,8 +29,6 @@ CREATE TABLE IF NOT EXISTS user_info
 	PRIMARY KEY (ui_id),
 	FOREIGN KEY (u_id) REFERENCES `user`(u_id) ON DELETE CASCADE
 );
-
-/*INSERT INTO user_info VALUES ('1', '1', 'East Haven','Boston', 'Wentworth','Brightcove', '0000-00-00', 'Cool Description');*/
 
 CREATE TABLE IF NOT EXISTS friend
 (

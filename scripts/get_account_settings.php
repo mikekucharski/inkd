@@ -43,7 +43,7 @@ if (!empty($result) &&	mysql_num_rows($result) > 0)
 	";
 	
 	print "
-	<form action='#' method='post'>
+	<form action='scripts/update_password.php' method='post'>
 		<table id='form_table'>
 		<tr>
 			<td><label>Current Password:</label></td>

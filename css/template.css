@@ -117,7 +117,7 @@
  #header_left
  {
 	position:relative;
-	width:70%;
+	width:65%;
 	float:left;
 	/*background-color:lightblue;*/
  }
@@ -132,7 +132,7 @@
  #header_right
  {
 	position:relative;
-	width:30%;
+	width:35%;
 	float:right;
 	/*background-color:yellow;*/
 	text-align:right;

@@ -13,7 +13,7 @@
 			  <div class="nav-collapse">
 				<ul class="nav">
 				  <li class="active"><a href="home.php"><i class="icon-home icon-white"></i> Home</a></li>
-				  <li><a href="#"><i class="icon-user icon-white"></i> Profile</a></li>
+				  <li><a href="profile.php?u_id=<?php print $_SESSION['u_id'];?>"><i class="icon-user icon-white"></i> Profile</a></li>
 				  <li><a href="#"><i class="icon-globe icon-white"></i> Friends</a></li>
 				  <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-wrench icon-white"></i> Settings<b class="caret"></b></a>

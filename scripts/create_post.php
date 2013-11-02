@@ -13,11 +13,12 @@
 
 		//Connect To Database
 		require_once __dir__ . '/db_connect.php';
-		$db_connect = new DB_CONNECT(); 
+		$mysqli = connect();
 		
 		$query ="INSERT INTO post(u_id, repost_id, message, post_time) VALUES('$u_id', '$repost_id', '$post', '$post_time')";
-		$result=mysql_query($query);
-		if($result)
+		$result=$mysqli->query($query);
+		$mysqli->close();
+		if($result === true)
 		{
 			header('location:../home.php?success=1');
 		}
@@ -25,7 +26,6 @@
 		{
 			header('location:../home.php?error=query_fail');
 		}
-		print mysql_error();
 	}
 	else 
 	{

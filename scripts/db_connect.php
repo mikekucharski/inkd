@@ -1,32 +1,11 @@
 <?php
-
-class DB_CONNECT 
-{
-    function __construct() 
-	{
-        $this->connect();
-    }
- 
-    function __destruct() 
-	{
-        $this->close();
-    }
- 
-    function connect() 
-	{
-        require_once __DIR__ . '/db_config.php';
-        // Connecting to mysql database
-        $con = mysql_connect(DB_SERVER, DB_USER, DB_PASSWORD) or die(mysql_error());
-        // Selecting database
-        $db = mysql_select_db(DB_DATABASE) or die(mysql_error());
-        // returing connection cursor
-        return $con;
-    }
-
-    function close() 
-	{
-        mysql_close();
-    }
-}
- 
+	function connect(){
+		require_once __DIR__ . '/db_config.php';
+		// Connecting to mysql database
+		$con = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD,DB_DATABASE);
+		if ($con->connect_error) {
+			trigger_error('Database connection failed: '  . $con->connect_error, E_USER_ERROR);
+		}
+		return $con;
+	}
 ?>

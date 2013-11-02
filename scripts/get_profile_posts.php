@@ -8,14 +8,14 @@
 		
 		//connect to database
 		require_once __DIR__ . '/db_connect.php';
-		$db = new DB_CONNECT();
+		$mysqli = connect();
 		
 		$query = "SELECT * FROM post WHERE u_id='$u_id' ORDER BY post_time DESC";
-		$result = mysql_query($query);
+		$result=$mysqli->query($query);
 		
-		if (!empty($result) &&	mysql_num_rows($result) > 0) 
+		if ($result !== false && $result->num_rows > 0) 
 		{
-			while($row = mysql_fetch_array($result))
+			while($row = $result->fetch_assoc())
 			{
 				$p_id = $row['p_id'];
 				$u_id = $row['u_id'];
@@ -52,9 +52,10 @@
 						</div>
 					</div>
 				";
-			}
-			
-		}
+				$mysqli->close();
+			} // endwhile
+			$mysqli->close();
+		}// end if
 	}else
 	{
 		header('location:404.php');

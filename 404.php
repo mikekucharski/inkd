@@ -1,7 +1,5 @@
 <?php include('includes/is_logged_in.php'); ?>
 
-<!-- Hey I'm in dev branch -->
-
 <html>
 <head>
 	

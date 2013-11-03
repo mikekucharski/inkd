@@ -25,7 +25,6 @@
 		{
 			header('location:../home.php?error=query_fail');
 		}
-		print mysql_error();
 	}
 	else 
 	{

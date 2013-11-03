@@ -1,4 +1,3 @@
-<!-- login -->
 <html>
 
 	<head>
@@ -14,7 +13,6 @@
 	<head>
 	
 	<body>
-		
 		<div id="wrap">
 			<div id="header">
 				 <img src="res/logo.png" alt="Logo">

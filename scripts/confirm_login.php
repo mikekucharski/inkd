@@ -8,15 +8,15 @@
 		$password =$_POST['pass'];
 		
 		require_once __DIR__ .'/db_connect.php';
-		$db = new DB_CONNECT();
+		$mysqli = connect();
 		
 		$query ="SELECT * FROM user WHERE email='$email'";
-		$result=mysql_query($query);
+		$result=$mysqli->query($query);
 		
-		if (!empty($result) &&	mysql_num_rows($result) > 0) 
+		if ($result !== false && $result->num_rows > 0) 
 		{
-			$row = mysql_fetch_array($result);
-		
+			$row = $result->fetch_assoc();
+			$mysqli->close();
 			if(hash('sha256', $row['salt'].$password)==$row['password'])
 			{
 				SESSION_START();
@@ -30,6 +30,7 @@
 				header('location:../login.php?error=wrong_password');
 			}
 		}else{
+			$mysqli->close();
 			header('location:../login.php?error=wrong_password2');
 		}
 	}

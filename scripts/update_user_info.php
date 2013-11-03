@@ -36,12 +36,12 @@
 	}
 	
 	require_once __DIR__ . '/db_connect.php';
-	$db = new DB_CONNECT();
+	$mysqli = connect();
 
 	$query= "UPDATE user_info SET hometown='$hometown',location='$location', school='$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
-	$result=mysql_query($query);
-	
-	if($result)
+	$result=$mysqli->query($query);
+	$mysqli->close();
+	if($result !== false)
 	{
 		header('location:../profile_settings.php?updated=1');
 		exit();

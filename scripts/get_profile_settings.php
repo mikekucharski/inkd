@@ -4,14 +4,15 @@ $u_id = $_SESSION['u_id'];
 
 //connect to database
 require_once __DIR__ . '/db_connect.php';
-$db = new DB_CONNECT();
+$mysqli = connect();
 
 $query = "SELECT * FROM user_info WHERE u_id='$u_id'";
-$result = mysql_query($query);
+$result=$mysqli->query($query);
 
-if (!empty($result) &&	mysql_num_rows($result) > 0) 
+if($result !== false && $result->num_rows > 0) 
 {
-	$row = mysql_fetch_array($result);
+	$row = $result->fetch_assoc();
+	$mysqli->close();
 	
 	$hometown = $row['hometown'];
 	$location = $row['location'];

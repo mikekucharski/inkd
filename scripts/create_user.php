@@ -40,16 +40,17 @@
 			
 			//connect to database
 			require_once __DIR__ . '/db_connect.php';
-			$db = new DB_CONNECT();
+			$mysqli = connect();
 			
 			$query = "INSERT INTO user(first_name, last_name, email, password, salt) VALUES('$first', '$last', '$email', '$password', '$salt')";
-			$result = mysql_query($query) or die(mysql_error());
-			$last_id= mysql_insert_id();
+			$result=$mysqli->query($query);
+			$last_id= $mysqli->insert_id;
 			
 			$query2 = "INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES('$last_id','','','','','','')";
-			$result2 = mysql_query($query2);
+			$result2 = $mysqli->query($query2);
 			// check if row inserted or not
-			if ($result && $result2) 
+			$mysqli->close();
+			if (($result && $result2) !== false) 
 			{
 				// successfully inserted into database
 				SESSION_START();

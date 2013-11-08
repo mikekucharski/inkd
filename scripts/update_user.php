@@ -27,6 +27,10 @@
 	require_once __DIR__ . '/db_connect.php';
 	$mysqli = connect();
 	
+	$first = $mysqli->real_escape_string(trim($first));
+	$last = $mysqli->real_escape_string(trim($last));
+	$email = $mysqli->real_escape_string(trim($email));
+	
 	$query = "UPDATE user SET first_name='$first', last_name='$last', email='$email'  WHERE u_id='$u_id'";
 	$result=$mysqli->query($query);
 	$mysqli->close();

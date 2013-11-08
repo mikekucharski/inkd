@@ -21,6 +21,14 @@ if($result !== false && $result->num_rows > 0)
 	$birthday = $row['birthday'];
 	$description = $row['description'];
 	
+	//sanitize output
+	$hometown = htmlentities($hometown);
+	$location = htmlentities($location);
+	$school = htmlentities($school);
+	$workplace = htmlentities($workplace);
+	$birthday = htmlentities($birthday);
+	$description = htmlentities($description);
+	
 	print "
 	<form action='scripts/update_user_info.php' method='get'>
 		<table id='form_table'>

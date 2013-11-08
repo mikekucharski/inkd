@@ -12,8 +12,6 @@
 		$password = $_POST["password"];
 		$password2 = $_POST["password2"];
 		
-	
-		
 		if($password != $password2){
 			header("location:../register.php?error=password_match");
 			exit();
@@ -27,13 +25,12 @@
 			//All good, save data
 			
 			//Salt the password
-			
 			define('SALT_LENGTH', 20);
 			$salt='';
 			$character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 			for ($i=0; $i<20; $i++)
 			{
-				$salt.=$character[rand(0, strlen($character))-1];
+				$salt.=$character[rand(0, (strlen($character)-1))];
 			}
 			
 			$password = hash('sha256', $salt.$password);
@@ -41,6 +38,12 @@
 			//connect to database
 			require_once __DIR__ . '/db_connect.php';
 			$mysqli = connect();
+			
+			//sanitize input
+			$first = $mysqli->real_escape_string(trim($first));
+			$last = $mysqli->real_escape_string(trim($last));
+			$email = $mysqli->real_escape_string(trim($email));
+			$password = $mysqli->real_escape_string(trim($password));
 			
 			$query = "INSERT INTO user(first_name, last_name, email, password, salt) VALUES('$first', '$last', '$email', '$password', '$salt')";
 			$result=$mysqli->query($query);

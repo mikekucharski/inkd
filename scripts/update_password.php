@@ -25,6 +25,10 @@ if (isset($_POST['current_password']) && !empty($_POST['current_password']) &&
 	require_once __DIR__ .'/db_connect.php';
 	$mysqli = connect();
 	
+	$current_password = $mysqli->real_escape_string(trim($current_password));
+	$password1 = $mysqli->real_escape_string(trim($password1));
+	$password2 = $mysqli->real_escape_string(trim($password2));
+	
 	$query ="SELECT * FROM user WHERE u_id='$u_id'";
 	$result=$mysqli->query($query);
 	

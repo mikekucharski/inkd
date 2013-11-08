@@ -13,11 +13,16 @@ $result=$mysqli->query($query);
 if ($result !== false && $result->num_rows > 0) 
 {
 	$row = $result->fetch_assoc();
-	
 	$first = $row['first_name'];
 	$last = $row['last_name'];
 	$email = $row['email'];
 	$password = $row['password'];
+	
+	//sanitize output
+	$first = htmlentities($first);
+	$last = htmlentities($last);
+	$email = htmlentities($email);
+	$password = htmlentities($password);
 	
 	print "
 	<form action='scripts/update_user.php' method='post'>
@@ -51,11 +56,11 @@ if ($result !== false && $result->num_rows > 0)
 		</tr>
 		<tr>
 			<td><label>New Password:</label></td>
-			<td><input type='text' name='password1'></td>
+			<td><input type='password' name='password1'></td>
 		</tr>
 		<tr>
 			<td><label>Confirm Password:</label></td>
-			<td><input type='text' name='password2'></td>
+			<td><input type='password' name='password2'></td>
 		</tr>
 		<tr>
 			<td></td>

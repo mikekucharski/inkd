@@ -21,6 +21,10 @@
 				$u_id = $row['u_id'];
 				$msg = $row['message'];
 				$time = $row['post_time'];
+				
+				//sanitize output
+				$msg = htmlentities($msg);
+				
 				print "
 					<!--Ink Div-->
 					<div id='ink'>

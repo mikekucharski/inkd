@@ -10,6 +10,10 @@
 		require_once __DIR__ .'/db_connect.php';
 		$mysqli = connect();
 		
+		//sanitize input
+		$email = $mysqli->real_escape_string(trim($email));
+		$password = $mysqli->real_escape_string(trim($password));
+		
 		$query ="SELECT * FROM user WHERE email='$email'";
 		$result=$mysqli->query($query);
 		

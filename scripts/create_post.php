@@ -15,6 +15,9 @@
 		require_once __dir__ . '/db_connect.php';
 		$mysqli = connect();
 		
+		//sanitize input
+		$post = $mysqli->real_escape_string(trim($post));
+		
 		$query ="INSERT INTO post(u_id, repost_id, message, post_time) VALUES('$u_id', '$repost_id', '$post', '$post_time')";
 		$result=$mysqli->query($query);
 		$mysqli->close();

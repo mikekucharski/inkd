@@ -46,7 +46,7 @@ if ($result !== false && $result->num_rows > 0)
 		</table>
 	</form>
 	";
-	
+	print "<div class='center span8 page-header'></div>";
 	print "
 	<form action='scripts/update_password.php' method='post'>
 		<table id='form_table'>

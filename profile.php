@@ -16,24 +16,26 @@
 			<div class="container-fluid">
 				<div class="row-fluid">
 
-					<div id="panel" class="span4">
+					<div id="column" class="span4">
 					
 						<!--Sidebar content-->
-						<ul>
-						  <li class="span7">
-							<a class="thumbnail" data-toggle="lightbox" href="#demoLightbox">
-							  <img src="res/mike.jpg" alt="">
-							</a>
-						  </li>
-
-						</ul>
-
+						<h1>Mike Kucharski</h1>
+						<img src="res/default_profile.jpg"/>
+						<button type="button" class="btn btn-primary">Add Friend</button>
+						<div class='page-header'></div>
+						<p>Hometown:</p>
+						<p>East Haven</p>
+						<p>Current Location:</p>
+						<p>School:</p>
+						<p>Workplace:</p>
+						<p>Birthday</p>
+						<p>Description</p>
+						
 					</div> <!-- End leftbar -->
 					
 					<div  class="span7">
 						<?php include("scripts/get_profile_posts.php"); ?>
-					</div>
-					
+					</div> <!-- End rightbar -->
 					
 				</div>
 			</div>

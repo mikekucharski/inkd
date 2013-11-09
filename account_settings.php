@@ -14,7 +14,9 @@
 		
 		<div id="main">
 			<div id="column" class="container">
-				<h1>Account Settings</h1>
+				<div class='center span8 page-header'>
+					<h1>Account Settings</h1>
+				</div>
 				
 				<?php include('scripts/get_account_settings.php'); ?>
 				

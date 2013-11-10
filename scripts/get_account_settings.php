@@ -29,42 +29,42 @@ if ($result !== false && $result->num_rows > 0)
 		<table id='form_table'>
 		<tr>
 			<td><label>First Name:</label></td>
-			<td><input type='text' name='first_name' value='$first'></input></td>
+			<td><input class='form-control' type='text' name='first_name' value='$first'></input></td>
 		</tr>
 		<tr>
 			<td><label>Last Name:</label></td>
-			<td><input type='text' name='last_name' value='$last'></input></td>
+			<td><input class='form-control' type='text' name='last_name' value='$last'></input></td>
 		</tr>
 		<tr>
 			<td><label>Email Address:</label></td>
-			<td><input type='text' name='email' value='$email'></input></td>
+			<td><input class='form-control' type='text' name='email' value='$email'></input></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type='submit' name='submit' value='Apply Changes'></input></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input></td>
 		</tr>
 		</table>
 	</form>
 	";
-	print "<div class='center span8 page-header'></div>";
+	print "<div class='no-marg center col-sm-6 page-header'><h1>Change Password</h1></div>";
 	print "
 	<form action='scripts/update_password.php' method='post'>
 		<table id='form_table'>
 		<tr>
 			<td><label>Current Password:</label></td>
-			<td><input type='text' name='current_password'></td>
+			<td><input class='form-control' type='text' name='current_password'></td>
 		</tr>
 		<tr>
 			<td><label>New Password:</label></td>
-			<td><input type='password' name='password1'></td>
+			<td><input class='form-control' type='password' name='password1'></td>
 		</tr>
 		<tr>
 			<td><label>Confirm Password:</label></td>
-			<td><input type='password' name='password2'></td>
+			<td><input class='form-control' type='password' name='password2'></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type='submit' name='submit' value='Change Password'></input></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input></td>
 		</tr>
 		</table>
 	</form>

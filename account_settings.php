@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php include('includes/is_logged_in.php'); ?>
 
 <html>
@@ -14,12 +16,12 @@
 		
 		<div id="main">
 			<div id="column" class="container">
-				<div class='center span8 page-header'>
+				<div class='center col-sm-6 page-header'>
 					<h1>Account Settings</h1>
 				</div>
 				
 				<?php include('scripts/get_account_settings.php'); ?>
-				
+
 				<?php
 					if(isset($_GET['updated']) && !Empty($_GET['updated']))
 					{

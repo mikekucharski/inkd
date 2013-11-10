@@ -14,7 +14,9 @@
 		
 		<div id="main">
 			<div id="column" class="container">
-				<h1>Profile Settings</h1>
+				<div class='center col-sm-6 page-header'>
+					<h1>Profile Settings</h1>
+				</div>
 				
 				<?php include('scripts/get_profile_settings.php'); ?>
 				

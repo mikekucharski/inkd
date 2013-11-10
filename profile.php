@@ -13,10 +13,9 @@
 		<?php include('includes/header.php'); ?>
 		
 		<div id="main">
-			<div class="container-fluid">
-				<div class="row-fluid">
-
-					<div id="column" class="span4">
+			<div class="container">
+				<div class="row">
+					<div id="column" class="col-lg-4">
 					
 						<!--Sidebar content-->
 						<h1>Mike Kucharski</h1>
@@ -33,7 +32,7 @@
 						
 					</div> <!-- End leftbar -->
 					
-					<div  class="span7">
+					<div  class="col-lg-7">
 						<?php include("scripts/get_profile_posts.php"); ?>
 					</div> <!-- End rightbar -->
 					

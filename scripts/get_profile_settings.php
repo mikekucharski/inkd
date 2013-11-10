@@ -34,31 +34,31 @@ if($result !== false && $result->num_rows > 0)
 		<table id='form_table'>
 		<tr>
 			<td><label>Hometown:</label></td>
-			<td><input type='text' name='hometown' value='$hometown'></input></td>
+			<td><input class='form-control' type='text' name='hometown' value='$hometown'></input></td>
 		</tr>
 		<tr>
 			<td><label>Location:</label></td>
-			<td><input type='text' name='location' value='$location'></input></td>
+			<td><input class='form-control' type='text' name='location' value='$location'></input></td>
 		</tr>
 		<tr>
 			<td><label>School:</label></td>
-			<td><input type='text' name='school' value='$school'></input></td>
+			<td><input class='form-control' type='text' name='school' value='$school'></input></td>
 		</tr>
 		<tr>
 			<td><label>Workplace:</label></td>
-			<td><input type='text' name='workplace' value='$workplace'></td>
+			<td><input class='form-control' type='text' name='workplace' value='$workplace'></td>
 		</tr>
 		<tr>
 			<td><label>Birthday:</label></td>
-			<td><input type='text' name='birthday' value='$birthday'></td>
+			<td><input class='form-control' type='text' name='birthday' value='$birthday'></td>
 		</tr>
 		<tr>
 			<td><label>Short Description:</label></td>
-			<td><input type='text' name='description' value='$description'></td>
+			<td><input class='form-control' type='text' name='description' value='$description'></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type='submit' name='submit' value='Apply Changes'></input></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input></td>
 		</tr>
 		</table>
 	</form>

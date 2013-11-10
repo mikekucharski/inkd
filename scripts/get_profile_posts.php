@@ -50,9 +50,9 @@
 						
 						<!-- Ink Options -->
 						<div id='ink_options'>
-							<a href='#'><span class='label-important label'><i class='icon-heart icon-white'></i></span> Like</a>
-							<a href='#'><span class='label-info label'><i class='icon-tint icon-white'></i></span> Re-Ink</a>
-							<a href='#'><span class='label-success label'><i class='icon-comment icon-white'></i></span> Comment</a>
+							<a href='#'><span class='label-danger label'><i class='glyphicon glyphicon-heart white'></i></span> Like</a>
+							<a href='#'><span class='label-primary label'><i class='glyphicon glyphicon-tint white'></i></span> Re-Ink</a>
+							<a href='#'><span class='label-success label'><i class='glyphicon glyphicon-comment white'></i></span> Comment</a>
 						</div>
 					</div>
 				";

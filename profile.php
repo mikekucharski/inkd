@@ -16,20 +16,8 @@
 			<div class="container">
 				<div class="row">
 					<div id="column" class="col-lg-4">
-					
-						<!--Sidebar content-->
-						<h1>Mike Kucharski</h1>
-						<img src="res/default_profile.jpg"/>
-						<button type="button" class="btn btn-primary">Add Friend</button>
-						<div class='page-header'></div>
-						<p>Hometown:</p>
-						<p>East Haven</p>
-						<p>Current Location:</p>
-						<p>School:</p>
-						<p>Workplace:</p>
-						<p>Birthday</p>
-						<p>Description</p>
-						
+					<!--Sidebar content-->
+						<?php include("scripts/get_profile_info.php"); ?>
 					</div> <!-- End leftbar -->
 					
 					<div  class="col-lg-7">

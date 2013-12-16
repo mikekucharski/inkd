@@ -1,5 +1,4 @@
 <?php
-
 $u_id = $_SESSION['u_id'];
 
 //connect to database

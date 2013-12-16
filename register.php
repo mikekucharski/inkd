@@ -15,7 +15,7 @@
 			</div>
 			
 			<div id="main">
-				<div class="register_form login_form">
+				<div class="register_form">
 					<h1>Get Ink'd</h1>
 					<form id="register" action="scripts/create_user.php" method="POST">
 						<table>

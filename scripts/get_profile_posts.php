@@ -1,7 +1,5 @@
 <?php
 	
-	error_reporting(0);
-	
 	if(isset($_GET['u_id']) &&!empty($_GET['u_id']))
 	{
 		$u_id = $_GET['u_id'];
@@ -56,7 +54,6 @@
 						</div>
 					</div>
 				";
-				$mysqli->close();
 			} // endwhile
 			$mysqli->close();
 		}// end if

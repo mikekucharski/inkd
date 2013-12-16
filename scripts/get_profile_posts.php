@@ -1,6 +1,5 @@
 <?php
-	
-	error_reporting(0);
+	include('format_date.php');
 	
 	if(isset($_GET['u_id']) &&!empty($_GET['u_id']))
 	{
@@ -21,10 +20,9 @@
 				$u_id = $row['u_id'];
 				$msg = $row['message'];
 				$time = $row['post_time'];
-				
+				$time = format_date($time);
 				//sanitize output
 				$msg = htmlentities($msg);
-				
 				print "
 					<!--Ink Div-->
 					<div id='ink'>
@@ -56,13 +54,19 @@
 						</div>
 					</div>
 				";
-				$mysqli->close();
 			} // endwhile
 			$mysqli->close();
-		}// end if
+		}else
+		{
+			print "
+				<!--Ink Div-->
+				<div id='ink'>
+					<p style='text-align:center;'>No posts yet</p>
+				</div>
+			";
+		}// end else if
 	}else
 	{
 		header('location:404.php');
 	}
-	
 ?>

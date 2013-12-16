@@ -1,6 +1,4 @@
 <?php
-error_reporting(0);
-
 $u_id = $_SESSION['u_id'];
 
 //connect to database

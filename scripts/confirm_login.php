@@ -1,5 +1,4 @@
 <?php
-
 	if ( (isset($_POST['email']) && !empty($_POST['email'])) &&
 		 (isset($_POST['pass']) && !empty($_POST['pass'])))
 	{

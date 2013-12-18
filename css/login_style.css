@@ -41,13 +41,12 @@
 	clear:both;
 }
 
-.login_form
+.login_container
 {
 	text-align:center;
 	display:block;
 	width:700px;
-	margin: 0 auto;
-	margin-top:150px;
+	margin: 50 auto;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#bdecff),
             color-stop(90%,#94d2eb));
 	border-radius:7px;
@@ -55,42 +54,43 @@
 	box-shadow: 0px 3px 15px #292929;
 }
 
-.register_form
+.register_container
 {
+	padding:10px;
 	margin-top:100px;
 }
 
-.login_form h1{
+.login_container h1{
 	font-family: 'Raleway', ariel, serif;
 	font-size: 24px;
 	padding:10px;
 }
 
-.login_form p
+.login_container p
 {
 	padding:4px;
 	font-size:17px;
 }
 
-.login_form p a
+.login_container p a
 {
 	text-decoration:none;
 	color:blue;
 	
 }
 
-.login_form p a:hover
+.login_container p a:hover
 {
 	text-decoration:underline;
 	color:darkblue;
 }
 
-.login_form #register table
+.login_form table
 {
 	margin:auto;
 }
 
-label
+.login_form label
 {
 	display:inline-block;
 	text-align:right;
@@ -99,7 +99,7 @@ label
 	font-family: 'Raleway', ariel, serif;
 }
 
-input[type="text"], input[type="password"]
+.login_form input[type="text"], .login_form  input[type="password"]
 {
 	padding:10px;
 	margin:7px;
@@ -111,16 +111,16 @@ input[type="text"], input[type="password"]
 	border:1px solid purple;
 }
 
-input[type="text"]:focus, input[type="password"]:focus
+.login_form  input[type="text"]:focus, .login_form  input[type="password"]:focus
 {
 	outline:none;
 	background:#f9f7fc;
 	border:2px solid purple;
 }
 
-input[type="submit"], input[type="button"]
+.login_form  input[type="submit"], .login_form  input[type="button"]
 {
-	padding:10px;
+	padding:7px;
 	margin:7px;
 	width:100px;
 	height:40px;
@@ -132,7 +132,7 @@ input[type="submit"], input[type="button"]
 	border-radius:5px;
 }
 
-input[type="submit"]:hover, input[type="button"]:hover
+.login_form input[type="submit"]:hover, .login_form input[type="button"]:hover
 {
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#88abe8),
             color-stop(90%,#4b7bcf));

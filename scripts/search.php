@@ -48,7 +48,7 @@
 							<button type='submit' class='btn btn-primary'>Add Friend</button> 
 						</a>
 					<?php elseif($status === "friends"):?>
-						<a href="scripts/unfriend.php?u_id=<?=$row['u_id']?>&email=<?=$row['email']?>">
+						<a href="scripts/unfriend.php?u_id=<?=$row['u_id']?>&email=<?=$row['email']?>&redirect=search">
 							<button type='submit' class='btn btn-success'>Friends</button> 
 						</a>
 					<?php endif;?>

@@ -78,3 +78,6 @@ CREATE TABLE IF NOT EXISTS like_comment (
 	FOREIGN KEY (c_id) REFERENCES `comment`(c_id) ON DELETE CASCADE
 );
 
+/* TESTING DATA */
+INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Mike', 'Kucharski', 'mike@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES('(select max(id) from user)','hometown','location','school','workplace','birthday','Hi there');

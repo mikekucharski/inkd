@@ -13,7 +13,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="home.php"><i class="glyphicon glyphicon-home"></i> Home</a></li>
 			  <li><a href="profile.php?u_id=<?php print $_SESSION['u_id'];?>" ><i class="glyphicon glyphicon-user"></i> Profile</a></li>
-			  <li><a data-toggle="tab" href="#"><i class="glyphicon glyphicon-globe"></i> Friends</a></li>
+			  <li><a href="friends.php"><i class="glyphicon glyphicon-globe"></i> Friends</a></li>
 			  <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> Settings<b class="caret"></b></a>
 				<ul class="dropdown-menu">

@@ -30,38 +30,8 @@
 							</form>
 						</div>
 						
-						
-						<!--Ink Div-->
-						<div id='ink'>
-						
-							<!-- Profile Image -->
-							<div id="prof_img">
-								<img src='res/default_profile.jpg' alt='empty'/>
-							</div>
-							
-							<!-- Ink Header -->
-							<div id='ink_header'>
-								<div id='header_left'>
-									<span>Mike Kucharski</span>
-								</div>
-								<div id='header_right'>
-									<span>10/10/13 12:00 PM</span>
-								</div>
-							</div>
-							
-							<!-- Ink Post -->
-							<div id="ink_post">
-								<p>Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!Like OMG t this post is so super c really love this new Ink'd social network!!! I wish all my friends could see this!</p>
-							</div>
-							
-							<!-- Ink Options -->
-							<div id="ink_options">
-								<a href='#'><span class='label-danger label'><i class='glyphicon glyphicon-heart white'></i></span> Like</a>
-								<a href='#'><span class='label-primary label'><i class='glyphicon glyphicon-tint white'></i></span> Re-Ink</a>
-								<a href='#'><span class='label-success label'><i class='glyphicon glyphicon-comment white'></i></span> Comment</a>
-							</div>
-						</div>
-						
+						<!-- pull all posts -->
+						<?php include('scripts/get_all_posts.php'); ?>
 					</div>
 					
 					

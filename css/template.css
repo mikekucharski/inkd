@@ -78,7 +78,6 @@
  
 #prof_img
  {
-	/*background-color:yellow;*/
 	position:relative;
 	width:15%;
 	float:left;
@@ -93,7 +92,6 @@
  
  #ink_post
  {
-	/*background-color:orange;*/
 	position:relative;
 	width:85%;
 	float:right;
@@ -104,7 +102,6 @@
  
  #ink_options
  {
-	/*background-color:lightgreen;*/
 	clear:both;
 	position:relative;
 	padding-left:11.7%;
@@ -115,7 +112,6 @@
 	position:relative;
 	width:85%;
 	float:right;
-	/*background-color:orange;*/
 }
  
  #header_left
@@ -123,7 +119,6 @@
 	position:relative;
 	width:65%;
 	float:left;
-	/*background-color:lightblue;*/
  }
  
  #header_left span
@@ -234,4 +229,34 @@ clear:both;
      float: none;
      margin-left: auto;
      margin-right: auto;
+}
+
+/*Search Result Styles*/
+#search_result
+{ 
+	height:90px;
+	padding:10px;
+	border-top:1px solid lightgrey;
+	border-bottom:1px solid lightgrey;
+}
+
+#search_result img
+{
+	height:70px;
+	width:70px;
+	border:1px solid lightgrey;
+}
+
+#search_result p:first-child
+{
+	font-family: 'Raleway', ariel, serif;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#search_result p:nth-child(2)
+{
+	font-family: 'Raleway', ariel, serif;
+	font-size:14px;
+	color:grey;
 }

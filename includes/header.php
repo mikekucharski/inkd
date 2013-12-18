@@ -23,10 +23,9 @@
 			  </li>
 			  <li><a href="scripts/logout.php"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
           </ul>
-		  <form class="navbar-form navbar-right" method="get" action="scripts/search.php">
+		  <form class="navbar-form navbar-right" method="get" action="search_results.php">
 			 <div class="form-group">
 				<input name="search" id="nav_search_bar" type="text" class="form-control search-query" placeholder="Search" data-provide="typeahead" autocomplete="off">
-				
 			</div>
 			<button type="submit" class="btn btn-success">Search</button>
 		  </form>

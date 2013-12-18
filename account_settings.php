@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php include('includes/is_logged_in.php'); ?>
 
 <html>

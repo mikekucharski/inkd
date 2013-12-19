@@ -47,7 +47,7 @@
 				<!-- Ink Header -->
 				<div id='ink_header'>
 					<div id='header_left'>
-						<span><?= $first ?> <?= $last ?></span>
+						<span><a href="profile.php?u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a></span>
 					</div>
 					<div id='header_right'>
 						<span><?=$time?></span>

@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	
+	print($_SERVER['HTTP_HOST']);
+	exit;
 	if(isset($_GET['u_id']) && !empty($_GET['u_id']) &&
 	  isset($_GET['redirect']) && !empty($_GET['redirect']))
 	{
@@ -17,24 +20,26 @@
 		$mysqli->close();
 		
 		// DELETED FRIENDSHIP, NOW REDIRECT
+		// apparently this isnt needed
 		if($redirect === 'search' && isset($_GET['email']) && !empty($_GET['email']))
 		{
 			$search = $_GET['email'];
 			$path = '?search=$search&query=success';
-		}
-		else if($redirect === 'friends')
+		}else if($redirect === 'friends')
 		{
 			$path = '?query=success';
+		}else if($redirect === 'profile')
+		{
+			$path = '?u_id=$u_id&query=success';
 		}
 		
-		if($result!== false)
-		{
-			header('Location: ' . $_SERVER['HTTP_REFERER'] . $path);
-		}
-		else
+		
+		if($result === false)
 		{
 			header("location:../search_results.php?search=$search&query=fail");
 		}
+		
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	}
 	else 
 	{

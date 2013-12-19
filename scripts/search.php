@@ -44,7 +44,7 @@
 					<div class='col-lg-3'>
 					
 					<?php if($status === "not friends"):?>
-						<a href="scripts/add_friend.php?u_id=<?=$row['u_id']?>&email=<?=$row['email']?>">
+						<a href="scripts/add_friend.php?u_id=<?=$row['u_id']?>&email=<?=$row['email']?>&redirect=search">
 							<button type='submit' class='btn btn-primary'>Add Friend</button> 
 						</a>
 					<?php elseif($status === "friends"):?>

@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	
-	print($_SERVER['HTTP_HOST']);
-	exit;
 	if(isset($_GET['u_id']) && !empty($_GET['u_id']) &&
 	  isset($_GET['redirect']) && !empty($_GET['redirect']))
 	{

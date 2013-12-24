@@ -1,6 +1,26 @@
 <?php
 
-function format_date($datetime)
+	/**
+	* Renders Templates
+	*
+	**/
+	function render($template, $data = array())
+	{
+		$path = '../views/' . $template . '.php';
+		if(file_exists($path))
+		{
+			extract($data);
+			
+			
+			require($path);
+		}
+	}
+
+	/**
+	* Formats Date and Time from datetime object
+	*
+	**/
+	function format_date($datetime)
 {
 	$datetime = strtotime($datetime);
 	$day = date("d", $datetime);
@@ -14,5 +34,4 @@ function format_date($datetime)
 			$hours . ':' . $minutes . ' ' . $time_of_day;
 	return $time;
 }
-
 ?>

@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS user_info
 (
 	ui_id int(10) NOT NULL AUTO_INCREMENT,
 	u_id int(10) NOT NULL,
-	hometown VARCHAR(30) NOT NULL,
-	location VARCHAR(30) NOT NULL,
+	hometown VARCHAR(50) NOT NULL,
+	location VARCHAR(50) NOT NULL,
 	school VARCHAR(50) NOT NULL,
 	workplace VARCHAR(50) NOT NULL,
 	birthday DATE NOT NULL,

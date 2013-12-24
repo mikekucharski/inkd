@@ -22,20 +22,20 @@ if ($result !== false && $result->num_rows > 0)
 	$email = htmlentities($email);
 	$password = htmlentities($password);
 	
-	print "
+	?>
 	<form action='scripts/update_user.php' method='post'>
 		<table id='form_table'>
 		<tr>
 			<td><label>First Name:</label></td>
-			<td><input class='form-control' type='text' name='first_name' value='$first'></input></td>
+			<td><input class='form-control' type='text' name='first_name' value='<?=$first?>'></input></td>
 		</tr>
 		<tr>
 			<td><label>Last Name:</label></td>
-			<td><input class='form-control' type='text' name='last_name' value='$last'></input></td>
+			<td><input class='form-control' type='text' name='last_name' value='<?=$last?>'></input></td>
 		</tr>
 		<tr>
 			<td><label>Email Address:</label></td>
-			<td><input class='form-control' type='text' name='email' value='$email'></input></td>
+			<td><input class='form-control' type='text' name='email' value='<?=$email?>'></input></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -43,9 +43,7 @@ if ($result !== false && $result->num_rows > 0)
 		</tr>
 		</table>
 	</form>
-	";
-	print "<div class='no-marg center col-sm-6 page-header'><h1>Change Password</h1></div>";
-	print "
+	<div class='no-marg center col-sm-6 page-header'><h1>Change Password</h1></div>
 	<form action='scripts/update_password.php' method='post'>
 		<table id='form_table'>
 		<tr>
@@ -66,7 +64,7 @@ if ($result !== false && $result->num_rows > 0)
 		</tr>
 		</table>
 	</form>
-	";
+	<?php
 }
 
 ?>

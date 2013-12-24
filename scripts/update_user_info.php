@@ -48,16 +48,7 @@
 	$query= "UPDATE user_info SET hometown='$hometown',location='$location', school='$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
 	$result=$mysqli->query($query);
 	$mysqli->close();
-	if($result !== false)
-	{
-		header('location:../profile_settings.php?updated=1');
-		exit();
-	}
-	else 
-	{
-		header('location:../profile_settings.php?error=query_fail');
-		exit();
-	}
 	
-
+	$response['success'] = $result;
+	print json_encode($response);
 ?>

@@ -1,7 +1,16 @@
 <html>
 	<head>
-	<link rel="stylesheet" type="text/css" href="css/login_style.css">
-	<?php include('includes/head.php'); ?>
+		<link rel="stylesheet" type="text/css" href="css/login_style.css">
+		<base href="http://127.0.0.1/workstudy/html/" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap CSS-->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<!-- Bootstrap JS-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		
 		<title>Log In</title>
 	</head>
 	
@@ -23,7 +32,7 @@
 		
 		<div class="login_container">
 			<h2>Sign In</h2>
-			<form class='login_form' action="scripts/confirm_login.php" method="POST">
+			<form class='login_form' action="../scripts/confirm_login.php" method="POST">
 				<input name='email' type="text" placeholder="Email"/>
 				<input name='pass' type="password" placeholder="Password"/>
 				<input name='login' type="submit" value="Sign In"/><br>

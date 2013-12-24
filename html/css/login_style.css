@@ -1,0 +1,141 @@
+/* Style for login and register pages */
+*
+{
+	margin:0px;
+	padding:0px;
+}
+
+#wrap
+{
+	min-height:100%;
+	background: url(../res/mocha_grunge.png);
+}
+
+#header
+{
+	overflow:auto;
+	background: url(../res/subtle_grunge.png);
+	height:150px;
+	box-shadow: 1px 1px 8px #000000;
+	text-align:center;
+}
+
+#header img
+{
+	height:150px;
+	width:630px;
+}
+
+#main
+{
+	padding-bottom:50px;
+}
+
+#footer
+{
+	background: url(../res/subtle_grunge.png);
+	position: relative;
+	margin-top: -50px; 
+	height: 50px;
+	box-shadow: -1px -1px 8px #000000;
+	clear:both;
+}
+
+.login_container
+{
+	text-align:center;
+	display:block;
+	width:700px;
+	margin: 50 auto;
+	margin-top:125px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#bdecff),
+            color-stop(90%,#94d2eb));
+	border-radius:7px;
+	border:1px solid purple;
+	box-shadow: 0px 3px 15px #292929;
+}
+
+.register_container
+{
+	padding:10px;
+	margin-top:100px;
+}
+
+.login_container h2{
+	font-size: 24px;
+	padding:10px;
+}
+
+.login_container p
+{
+	padding:4px;
+	font-size:17px;
+}
+
+.login_container p a
+{
+	text-decoration:none;
+	color:blue;
+	
+}
+
+.login_container p a:hover
+{
+	text-decoration:underline;
+	color:darkblue;
+}
+
+.login_form table
+{
+	margin:auto;
+}
+
+.login_form label
+{
+	display:inline-block;
+	text-align:right;
+	width:100%;
+	font-size:17px;
+	font-family: 'Raleway', ariel, serif;
+}
+
+.login_form input[type="text"], .login_form  input[type="password"]
+{
+	padding:10px;
+	margin:7px;
+	width:250px;
+	height:40px;
+	font-size:18px;
+	border-radius:5px;
+	border:none;
+	border:1px solid purple;
+}
+
+.login_form  input[type="text"]:focus, .login_form  input[type="password"]:focus
+{
+	outline:none;
+	background:#f9f7fc;
+	border:2px solid purple;
+}
+
+.login_form  input[type="submit"], .login_form  input[type="button"]
+{
+	padding:7px;
+	margin:7px;
+	width:100px;
+	height:40px;
+	font-size:18px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#a2bce8),
+            color-stop(90%,#4b7bcf));
+	border:1px solid white;
+	color:white;
+	border-radius:5px;
+}
+
+.login_form input[type="submit"]:hover, .login_form input[type="button"]:hover
+{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#88abe8),
+            color-stop(90%,#4b7bcf));
+	cursor:pointer;
+}
+

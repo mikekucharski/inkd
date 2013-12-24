@@ -191,9 +191,9 @@ overflow-y: scroll;
 
 #form_table  input[type="submit"] {margin:7px;}
 
-#alert
+.alert
 {
-	width:500px;
+	width:600px;
 	display:block;
 	margin:auto;
 	text-align:center;
@@ -265,4 +265,10 @@ clear:both;
 	font-family: 'Raleway', ariel, serif;
 	font-size:14px;
 	color:grey;
+}
+
+#datepicker
+{
+	background-color:white;
+	cursor:pointer;
 }

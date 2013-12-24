@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 	if(isset($_GET['u_id']) && !empty($_GET['u_id']) &&
 	  isset($_GET['redirect']) && !empty($_GET['redirect']))
 	{

@@ -1,8 +1,17 @@
 <html>
 	<head>
-	<link rel="stylesheet" type="text/css" href="css/login_style.css">
-	<?php include('includes/head.php'); ?>
-		<title>Log In</title>
+		<link rel="stylesheet" type="text/css" href="css/login_style.css">
+		<base href="http://127.0.0.1/workstudy/html/" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap CSS-->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<!-- Bootstrap JS-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+
+		<title>Register</title>
 	</head>
 	
 	 <body>
@@ -22,8 +31,8 @@
 		</div> 
 		
 		<div class="login_container register_container">
-			<h1>Get Ink'd</h1>
-			<form class='login_form' action="scripts/create_user.php" method="POST">
+			<h2>Get Ink'd</h2>
+			<form class='login_form' action="../scripts/create_user.php" method="POST">
 				<table>
 					<tr>
 						<td><label>First Name:</label></td>

@@ -1,6 +1,4 @@
 <?php
-	include('format_date.php');
-
 	$u_id = $_SESSION['u_id'];
 
 	//connect to database
@@ -47,7 +45,7 @@
 				<!-- Ink Header -->
 				<div id='ink_header'>
 					<div id='header_left'>
-						<span><a href="profile.php?u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a></span>
+						<span><a href="index.php?page=profile&u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a></span>
 					</div>
 					<div id='header_right'>
 						<span><?=$time?></span>

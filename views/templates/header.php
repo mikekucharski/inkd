@@ -11,7 +11,7 @@ if ( !isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true)
 
 <html>
 <head>
-	<base href="http://127.0.0.1/workstudy/html/" />
+	<!--<base href="http://127.0.0.1/workstudy/html/" />-->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 
 	<!-- Bootstrap CSS-->

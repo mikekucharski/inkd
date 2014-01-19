@@ -16,18 +16,21 @@
 				<div class='col-lg-2'>
 					<img src="res/default_profile.jpg" /> 
 				</div>
-				<div class='col-lg-7'>
+				<div class='col-lg-8'>
 					<a href="profile.php?u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a>
 					<p><?=$row['email']?></p>
 				</div>
 				
-				
-				<div class='col-lg-3'>
-				
-				<a href="scripts/unfriend.php?u_id=<?=$row['u_id']?>&redirect=friends">
-					<button type='submit' class='btn btn-success'>Friends</button> 
-				</a>
-				
+				<div class='col-lg-2 no-padding'>
+					<form id='friend_form' class='friend_form' style='display:none'>
+						<button type='submit' class='btn btn-primary'>Add Friend</button>
+						<label name="u_idf" hidden><?=$row['u_id']?></label>
+					</form>
+					
+					<form id="unfriend_form" class='unfriend_form' style='display:block'>
+						<button type='submit' class='btn btn-success'>Friends</button> 
+						<label name="u_idf" hidden><?=$row['u_id']?></label>
+					</form>
 				</div>
 			</div>
 			<?php

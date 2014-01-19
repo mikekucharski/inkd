@@ -43,7 +43,7 @@
 					<!-- Ink Header -->
 					<div id='ink_header'>
 						<div id='header_left'>
-							<span><a href="index.php?page=profile&u_id=<?=$u_id ?>"><p><?=$first_name?> <?=$last_name?></p></a></span>
+							<span><a href="index.php?page=profile&u_id=<?=$row['u_id']?>"><p><?=$first_name?> <?=$last_name?></p></a></span>
 						</div>
 						<div id='header_right'>
 							<span><?=$time?></span>

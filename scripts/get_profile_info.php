@@ -28,46 +28,60 @@
 			
 			?>
 				<img class='prof_img' src='res/default_profile.jpg'/>
-					<h2 class='display_name' ><?=$first?> <?=$last?></h2>
+				<h2 class='display_name' ><?=$first?> <?=$last?></h2>
 			<?php
-			if($s_id != $u_id)
+			
+			$query3="SELECT * FROM friend WHERE u_id={$s_id} AND u_idf={$u_id}";
+			$result3 = $mysqli->query($query3);
+			if($result3 !== false && $result3->num_rows>0)
 			{
-				// **********************************************************************/
-				$query3="SELECT * FROM friend WHERE u_id={$s_id} AND u_idf={$u_id}";
-				$result3 = $mysqli->query($query3);
-				if($result3 !== false && $result3->num_rows>0):?>
-					<a href="scripts/unfriend.php?u_id=<?=$u_id?>&redirect=profile">
-						<button type='submit' class='btn btn-success'>Friends</button> 
-					</a>
-				<?php else: ?>
-					<a href="scripts/add_friend.php?u_id=<?=$row['u_id']?>&redirect=profile">
-						<button type='submit' class='btn btn-primary'>Add Friend</button> 
-					</a>
-				<?php endif;
-				// **********************************************************************/
+				$f_status="none";
+				$uf_status="block";
 			}
+			else
+			{
+				$f_status="block";
+				$uf_status="none";
+				
+			}
+			if($s_id == $u_id)
+			{
+				$f_status="none";
+				$uf_status="none";
+			}
+			
 			?>
+				<div class='col-lg-3 no-padding'>
+					<form id='friend_form' class='friend_form' style='display:<?=$f_status?>'>
+						<button type='submit' class='btn btn-primary'>Add Friend</button>
+						<label name="u_idf" hidden><?=$u_id ?></label>
+					</form>
+					
+					<form id="unfriend_form" class='unfriend_form' style='display:<?=$uf_status?>'>
+						<button type='submit' class='btn btn-success'>Friends</button> 
+						<label name="u_idf" hidden><?=$u_id ?></label>
+					</form>
+				</div>
+				
 				<div class='prof-info clear col-lg-12'>
-						<div class='page-header'></div>
-						<p><span class='heading'>Hometown: </span><?=$hometown?></p>
-						<p><span class='heading'>Current Location: </span><?=$location?></p>
-						<p><span class='heading'>School: </span><?=$school?></p>
-						<p><span class='heading'>Workplace: </span><?=$workplace?></p>
-						<p><span class='heading'>Birthday: </span><?=$birthday?></p>
-						<p><span class='heading'>Description: </span><?=$description?></p>
-					</div>
+					<div class='page-header'></div>
+					<p><span class='heading'>Hometown: </span><?=$hometown?></p>
+					<p><span class='heading'>Current Location: </span><?=$location?></p>
+					<p><span class='heading'>School: </span><?=$school?></p>
+					<p><span class='heading'>Workplace: </span><?=$workplace?></p>
+					<p><span class='heading'>Birthday: </span><?=$birthday?></p>
+					<p><span class='heading'>Description: </span><?=$description?></p>
+				</div>
 			<?php
 			$mysqli->close();
 		}else{
 			$mysqli->close();
-			//header("Location: http://".$_SERVER['HTTP_HOST']."/workstudy/html/error");
 			header('location: index.php?page=404');
 			exit;
 		}
 	}else{
 		$mysqli->close();
 		header('location: index.php?page=404');
-		//header("Location: http://".$_SERVER['HTTP_HOST']."/workstudy/html/error");
 		exit;
 	}
 ?>

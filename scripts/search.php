@@ -17,15 +17,19 @@
 			$result2 = $mysqli->query($query2);
 			if($result2 !== false && $result2->num_rows>0)
 			{
-				$status="friends";
+				$f_status="none";
+				$uf_status="block";
 			}
 			else
 			{
-				$status="not friends";
+				$f_status="block";
+				$uf_status="none";
+				
 			}
 			if($row['u_id'] == $u_id)
 			{
-				$status="yourself";
+				$f_status="none";
+				$uf_status="none";
 			}
 			?>
 			<div  class="col-lg-6 center"  id="search_result">
@@ -33,22 +37,21 @@
 					<img src="res/default_profile.jpg" /> 
 				</div>
 				<div class='col-lg-7'>
-					<a href="profile.php?u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a>
+					<a href="index.php?page=profile&u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a>
 					<p><?=$row['email']?></p>
 				</div>
 				
 				
-				<div class='col-lg-3'>
-				
-				<?php if($status === "not friends"):?>
-					<a href="scripts/add_friend.php?u_id=<?=$row['u_id']?>&email=<?=$row['email']?>&redirect=search">
-						<button type='submit' class='btn btn-primary'>Add Friend</button> 
-					</a>
-				<?php elseif($status === "friends"):?>
-					<a href="scripts/unfriend.php?u_id=<?=$row['u_id']?>&email=<?=$row['email']?>&redirect=search">
+				<div class='col-lg-3 no-padding'>
+					<form id='friend_form' class='friend_form' style='display:<?=$f_status?>'>
+						<button type='submit' class='btn btn-primary'>Add Friend</button>
+						<label name="u_idf" hidden><?=$row['u_id']?></label>
+					</form>
+					
+					<form id="unfriend_form" class='unfriend_form' style='display:<?=$uf_status?>'>
 						<button type='submit' class='btn btn-success'>Friends</button> 
-					</a>
-				<?php endif; ?>
+						<label name="u_idf" hidden><?=$row['u_id']?></label>
+					</form>
 				</div>
 			</div>
 			<?php

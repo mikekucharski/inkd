@@ -272,3 +272,8 @@ clear:both;
 	background-color:white;
 	cursor:pointer;
 }
+
+.no-padding
+{
+	padding:0;
+}

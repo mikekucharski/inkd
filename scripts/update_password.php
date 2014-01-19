@@ -10,16 +10,12 @@ if (isset($_POST['current_password']) && !empty($_POST['current_password']) &&
 	$password1=$_POST['password1'];
 	$password2=$_POST['password2'];
 	
-	if($password1 != $password2)
+	if(($password1 != $password2) || (strlen($password1) < 6))
 	{
-		header('location:../account_settings.php?error=pass_match');
-		exit();
-	}else if(strlen($password1) < 6)
-	{
-		header('location:../account_settings.php?error=pass_short');
+		$response['success'] = false;
+		print json_encode($response);
 		exit();
 	}
-	
 	$u_id=$_SESSION['u_id'];
 	//connect to database
 	require_once __DIR__ .'/db_connect.php';
@@ -40,31 +36,28 @@ if (isset($_POST['current_password']) && !empty($_POST['current_password']) &&
 			$new_password = hash('sha256', $row['salt'].$password1);
 			$query2= "UPDATE user SET password='$new_password'";
 			$result2=$mysqli->query($query2);
-			$mysqli->close();
-			if($result2)
-			{
-				header('location:../account_settings.php?updated=2');
-			}
-			else
-			{
-				header('location:../account_settings.php?error=query_fail');
-			}
+			
+			$response['success'] = $result2;
 		}
 		else 
 		{
-			$mysqli->close();
-			header('location:../account_settings.php?error=wrong_current_password');
+			$response['success'] = $result;
+			$response['Error_Type'] = "Wrong Current Password";
 		}
 	}else
 	{
-		$mysqli->close();
-		header('location:../account_settings.php?error=query_fail');
+		$response['success'] = $result;
+		$response['Error_Type'] = "Query Fail";
 	}
+	$mysqli->close();
 	
 }
 else
 {
-	header('location:../account_settings.php?error=empty_fields');
+	$response['success'] = false;
+	$response['Error_Type'] = "Empty Fields";
 }
+
+print json_encode($response);
 
 ?>

@@ -36,8 +36,8 @@
 				<!--Ink Div-->
 				<div id='ink'>
 					<!-- Profile Image -->
-					<div id='prof_img'>
-						<img src='res/default_profile.jpg' alt='empty'/>
+					<div class='post-img-container'>
+						<img class='post-img' src='res/default_profile.jpg' alt='empty'/>
 					</div>
 
 					<!-- Ink Header -->

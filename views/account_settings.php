@@ -1,27 +1,25 @@
-<div id="column" class="container">
+<div class="column container">
 	<div class='center col-sm-6 page-header'>
 		<h1>Account Settings</h1>
 	</div>
-	
-	<?php include('../scripts/get_account_settings.php'); ?>
 
 	<form id="as_form" >
 		<table id='form_table'>
 		<tr>
 			<td><label>First Name:</label></td>
-			<td><input class='form-control' type='text' name='first_name' value='<?=$first?>'></input></td>
+			<td><input class='form-control' type='text' name='first_name' placeholder='First Name'></input></td>
 		</tr>
 		<tr>
 			<td><label>Last Name:</label></td>
-			<td><input class='form-control' type='text' name='last_name' value='<?=$last?>'></input></td>
+			<td><input class='form-control' type='text' name='last_name' placeholder='Last Name'></input></td>
 		</tr>
 		<tr>
 			<td><label>Email Address:</label></td>
-			<td><input class='form-control' type='text' name='email' value='<?=$email?>'></input></td>
+			<td><input class='form-control' type='text' name='email' placeholder='Email Address'></input></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input><img id="load-gif" src="../html/res/load.gif" /></td>
 		</tr>
 		</table>
 	</form>
@@ -51,7 +49,7 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input><img id="load-gif" style='display:none;' src="../html/res/load.gif" /></td>
 		</tr>
 		</table>
 	</form>

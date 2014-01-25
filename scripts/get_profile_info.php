@@ -27,7 +27,7 @@
 			$description = $row2['description'];
 			
 			?>
-				<img class='prof_img' src='res/default_profile.jpg'/>
+				<img class='prof-img' src='res/default_profile.jpg'/>
 				<h2 class='display_name' ><?=$first?> <?=$last?></h2>
 			<?php
 			

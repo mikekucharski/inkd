@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div id="column" class="col-lg-4">
+		<div class="column col-lg-4">
 		<!--Sidebar content-->
 			<?php include("../scripts/get_profile_info.php"); ?>
 		</div> <!-- End leftbar -->

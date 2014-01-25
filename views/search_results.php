@@ -1,4 +1,4 @@
-<div id="column" class="container">
+<div class="column container">
 	<div class='center col-sm-6 page-header'>
 		<h1>Search Results</h1>
 	</div>

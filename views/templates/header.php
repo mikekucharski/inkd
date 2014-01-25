@@ -28,6 +28,7 @@ if ( !isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true)
 	<link rel="stylesheet" type="text/css" href="css/template.css">
 	<script src="js/helpers.js"></script>
 	<script src="js/eventlisteners.js"></script>
+	<script src="js/onpageload.js"></script>
 	<title><?=$title?></title>
 <head>
 <body>

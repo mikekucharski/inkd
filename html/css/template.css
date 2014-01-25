@@ -1,24 +1,12 @@
-@font-face
-{
-	font-family: ProximaNova;
-	src: url('../fonts/ProximaNovaLight.otf')
-}
+/******************************************************************/
+/************************* General Styles *************************/
+/******************************************************************/
 
-*
-{
-	margin:0px;
-	padding:0px;
-}
-
-html
-{
-overflow: -moz-scrollbars-vertical; 
-overflow-y: scroll;
-}
-
-.white, .white a {
-  color: #fff;
-}
+@font-face {font-family: ProximaNova; src: url('../fonts/ProximaNovaLight.otf')}
+* {margin:0px;padding:0px;}
+html {overflow: -moz-scrollbars-vertical;overflow-y: scroll;}
+.white, .white a {color: #fff;}
+#nav_search_bar {width:200px;}
 
 #wrap
 {
@@ -43,11 +31,68 @@ overflow-y: scroll;
 	box-shadow: -1px -1px 15px #000000;
 	clear:both;
 }
-
-#nav_search_bar
+ 
+#form_table 
 {
-	width:200px;
+	margin:auto;
+	border:none;
+	font-family:'Raleway', sans, serif;
 }
+
+#form_table label
+{
+	display:inline-block;
+	text-align: right; 
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:14px;
+	font-weight:bold;
+	width:160px;
+}
+
+#form_table input[type="text"], #form_table input[type="password"]
+{
+	width:250px;
+	height:35px;
+	font-size:14px;
+	padding:10px;
+	margin:7px;
+	color:black;
+}
+
+#form_table  input[type="submit"] {margin:7px;}
+
+#ink, .column
+{
+	background:white;
+	overflow:auto;
+	border-radius: 5px;
+	box-shadow:1px 1px 5px #888888;
+	margin-bottom:20px;
+	padding:10px;
+	word-wrap: break-word;
+ }
+ 
+ .column h1
+{
+	text-align:center;
+}
+
+.alert
+{
+	width:600px;
+	display:block;
+	margin:auto;
+	text-align:center;
+}
+
+.clear {clear:both;}
+.no-padding {padding:0;}
+.center {float:none; margin-left:auto; margin-right:auto;}
+
+/*************************************************************/
+/************************* Home Page *************************/
+/*************************************************************/
 
 #ink_spill
 {
@@ -71,25 +116,25 @@ overflow-y: scroll;
 	margin-left:88%;
 }
 
-#ink, #column
+#home_img
 {
-	background:white;
-	overflow:auto;
-	border-radius: 5px;
-	box-shadow:1px 1px 5px #888888;
-	margin-bottom:20px;
-	padding:10px;
-	word-wrap: break-word;
- }
+	height:70px;
+	width:70px;
+	border: 1px solid lightgrey;
+}
+
+/*************************************************************/
+/************************* Ink Posts *************************/
+/*************************************************************/
  
-#prof_img
+.post-img-container
  {
 	position:relative;
 	width:15%;
 	float:left;
  }
  
- #prof_img img
+ .post-img
  {
 	height:70px;
 	width:70px;
@@ -139,16 +184,13 @@ overflow-y: scroll;
 	position:relative;
 	width:35%;
 	float:right;
-	/*background-color:yellow;*/
 	text-align:right;
 	color:grey;
  }
  
-
  #ink_options a 
-  {
+ {
 	padding-left:20px;
-	
  }
  
  #ink_options a:hover
@@ -156,48 +198,9 @@ overflow-y: scroll;
 	text-decoration:none;
  }
  
-#column h1
-{
-	text-align:center;
-}
- 
-#form_table 
-{
-	margin:auto;
-	border:none;
-	font-family:'Raleway', sans, serif;
-}
-
-#form_table  label
-{
-	display:inline-block;
-	text-align: right; 
-	padding-top:10px;
-	padding-bottom:10px;
-	font-size:14px;
-	font-weight:bold;
-	width:160px;
-}
-
-#form_table input[type="text"], #form_table input[type="password"]
-{
-	width:250px;
-	height:35px;
-	font-size:14px;
-	padding:10px;
-	margin:7px;
-	color:black;
-}
-
-#form_table  input[type="submit"] {margin:7px;}
-
-.alert
-{
-	width:600px;
-	display:block;
-	margin:auto;
-	text-align:center;
-}
+/****************************************************************/
+/************************* Profile Page *************************/
+/****************************************************************/
 
 .heading
 {
@@ -216,12 +219,7 @@ overflow-y: scroll;
 	font-size:16px;
 }
 
-.clear
-{
-clear:both;
-}
-
-.prof_img
+.prof-img
 {
 	display:inline;
 	float:left;
@@ -231,13 +229,10 @@ clear:both;
 	border-radius:4px;
 }
 
-.center {
-     float: none;
-     margin-left: auto;
-     margin-right: auto;
-}
+/****************************************************************/
+/************************* Search Page *************************/
+/****************************************************************/
 
-/*Search Result Styles*/
 #search_result
 { 
 	height:90px;
@@ -271,9 +266,4 @@ clear:both;
 {
 	background-color:white;
 	cursor:pointer;
-}
-
-.no-padding
-{
-	padding:0;
 }

@@ -17,7 +17,7 @@
 					<img src="res/default_profile.jpg" /> 
 				</div>
 				<div class='col-lg-8'>
-					<a href="profile.php?u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a>
+					<a href="index.php?page=profile&u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a>
 					<p><?=$row['email']?></p>
 				</div>
 				

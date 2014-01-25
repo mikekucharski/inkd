@@ -19,12 +19,13 @@
 			$u_id = $row['u_id'];
 			$msg = $row['message'];
 			$time = format_date($row['post_time']);
+			
 			//sanitize output
 			$msg = htmlentities($msg);
 			
 			$query2 = "SELECT * FROM user WHERE u_id=$u_id";
 			$result2=$mysqli->query($query2);
-			if($result2 !== false && $result->num_rows > 0)
+			if($result2 !== false && $result2->num_rows > 0)
 			{
 				$row = $result2->fetch_assoc();
 				$first = $row['first_name'];
@@ -38,8 +39,8 @@
 			<!--Ink Div-->
 			<div id='ink'>
 				<!-- Profile Image -->
-				<div id='prof_img'>
-					<img src='res/default_profile.jpg' alt='empty'/>
+				<div class='post-img-container'>
+					<img class='post-img' src='res/default_profile.jpg' alt='empty'/>
 				</div>
 
 				<!-- Ink Header -->

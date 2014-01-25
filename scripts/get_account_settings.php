@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 $u_id = $_SESSION['u_id'];
 
 //connect to database
@@ -16,13 +18,14 @@ if($result !== false && $result->num_rows > 0)
 	$first = $row['first_name'];
 	$last = $row['last_name'];
 	$email = $row['email'];
-	$password = $row['password'];
 	
 	//sanitize output
-	$first = htmlentities($first);
-	$last = htmlentities($last);
-	$email = htmlentities($email);
-	$password = htmlentities($password);
+	$response['success'] = true;
+	$response['first'] = htmlentities($first);
+	$response['last'] = htmlentities($last);
+	$response['email'] = htmlentities($email);
 }
 
+$response['success'] = false;
+print json_encode($response);
 ?>

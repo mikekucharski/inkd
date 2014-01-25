@@ -19,13 +19,17 @@ $(document).ready(function(){
 				}else{
 					$("#ps_success").css("display", "block");
 				}
-			}
+			},
+			error:function(xhr, error){
+				console.log(xhr); console.log(error);
+            }
 		});
 	});
 	
 	//Account Settings Event Listener 
 	$("#as_form").submit(function(event){
 		event.preventDefault();
+		$('#as_form').find('#load-gif').show();
 		
 		//clear response divs
 		$("#as_success").css("display", "none");
@@ -43,7 +47,11 @@ $(document).ready(function(){
 				else{
 					$("#as_failed").css("display", "block");
 				}
-			}
+				$('#as_form').find('#load-gif').hide();
+			},
+			error:function(xhr, error){
+				console.log(xhr); console.log(error);
+            }
 		});
 	});
 	
@@ -51,6 +59,7 @@ $(document).ready(function(){
 	$("#ap_form").submit(function(event){
 		event.preventDefault();
 
+		$('#ap_form').find('#load-gif').show();
 		//Clear Response Divs
 		$("#ap_success").css("display", "none");
 		$("#ap_failed").css("display", "none");
@@ -67,7 +76,11 @@ $(document).ready(function(){
 				else{
 					$("#ap_failed").css("display", "block");
 				}
-			}
+				$('#ap_form').find('#load-gif').hide();
+			},
+			error:function(xhr, error){
+				console.log(xhr); console.log(error);
+            }
 		});
 	});
 	
@@ -82,13 +95,15 @@ $(document).ready(function(){
 			data: {u_idf: $(this).find("label").text()},
 			dataType:'json',
 			success:function(data){
-				console.log(data);
 				//json response
 				if(data.success){
 					unfriend_form.hide();
 					unfriend_form.parent().find('#friend_form').show();
 				}	
-			}
+			},
+			error:function(xhr, error){
+				console.log(xhr); console.log(error);
+            }
 		});
 	});	
 	
@@ -102,13 +117,48 @@ $(document).ready(function(){
 			data: {u_idf: $(this).find("label").text()},
 			dataType:'json',
 			success:function(data){
-				console.log(data);
 				//json response
 				if(data.success){
 					friend_form.hide();
 					friend_form.parent().find('#unfriend_form').show();	
 				}	
-			}
+			},
+			error:function(xhr, error){
+				console.log(xhr); console.log(error);
+            }
+		});
+	});	
+	
+	// Home page Ink Post Event Listener
+	$("#create_post_form").submit(function(event){
+		event.preventDefault();
+		var post_form = $(this);
+		$.ajax({
+			url:"../scripts/create_post.php",
+			type:"POST",
+			data: $(this).serialize(),
+			dataType:'json',
+			success:function(data){
+				console.log(data);
+				post_form.find('textarea[name=ink-msg]').val("");  // clear post text area
+				
+				if(data.success){
+					newDiv= "<!--Ink Div--><div id='ink'><!-- Profile Image --><div class='post-img-container'><img class='post-img' src='res/default_profile.jpg' alt='empty'/></div> "+
+							"<!-- Ink Header --><div id='ink_header'><div id='header_left'><span><a href='index.php?page=profile&u_id=" + data.u_id + "'> "+
+									"<p>" + data.first_name + " " + data.last_name + "</p></a></span></div><div id='header_right'><span>" + data.post_time + "</span></div></div> "+
+							"<!-- Ink Post --><div id='ink_post'><p>" + data.post_msg + "</p></div> "+
+							"<!-- Ink Options --><div id='ink_options'> "+
+							"<a href='#'><span class='label-danger label'><i class='glyphicon glyphicon-heart white'></i></span> Like</a> "+
+							"<a href='#'><span class='label-primary label'><i class='glyphicon glyphicon-tint white'></i></span> Re-Ink</a> "+
+							"<a href='#'><span class='label-success label'><i class='glyphicon glyphicon-comment white'></i></span> Comment</a> "+
+							"</div></div> ";
+					$('#ink_post_container').prepend(newDiv);
+					$('#ink_post_container').children(":first").hide().slideDown(250);
+				}	
+			},
+			error:function(xhr, error){
+				console.log(xhr); console.log(error);
+            }
 		});
 	});	
 });

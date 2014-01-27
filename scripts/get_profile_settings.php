@@ -1,4 +1,5 @@
 <?php
+session_start();
 $u_id = $_SESSION['u_id'];
 
 //connect to database
@@ -20,12 +21,26 @@ if($result !== false && $result->num_rows > 0)
 	$birthday = $row['birthday'];
 	$description = $row['description'];
 	
-	//sanitize output
-	$hometown = htmlentities($hometown);
-	$location = htmlentities($location);
-	$school = htmlentities($school);
-	$workplace = htmlentities($workplace);
-	$birthday = htmlentities($birthday);
-	$description = htmlentities($description);
+	$response=array(
+		'success' =>true,
+		'data' => array(
+			'hometown' => htmlentities($hometown), 
+			'location' =>  htmlentities($location),
+			'school'=>  htmlentities($school),
+			'workplace' => htmlentities($workplace),
+			'birthday' => htmlentities($birthday),
+			'description' => htmlentities($description)
+		)
+	);
 }
+else
+{
+	$response=array(
+		'success' =>false,
+		'data' => json_decode("{}")
+	);
+}
+
+print json_encode($response);
+
 ?>

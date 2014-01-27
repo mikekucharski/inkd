@@ -46,7 +46,7 @@ if ( !isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true)
 			</div><!-- end navbar-header -->
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+					<li class="active"><a href="index.php?page=home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
 					<li><a href="index.php?page=profile&u_id=<?php print $_SESSION['u_id'];?>" ><i class="glyphicon glyphicon-user"></i> Profile</a></li>
 					<li><a href="index.php?page=friends"><i class="glyphicon glyphicon-globe"></i> Friends</a></li>
 					<li class="dropdown">

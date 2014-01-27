@@ -3,37 +3,35 @@
 		<h1>Profile Settings</h1>
 	</div>
 	
-	<?php include('../scripts/get_profile_settings.php'); ?>
-	
 	<form id='ps_form' name='ps_form'>
 		<table id='form_table'>
 		<tr>
 			<td><label>Hometown:</label></td>
-			<td><input class='form-control' type='text' name='hometown' maxlength='50' value='<?=$hometown ?>'></input></td>
+			<td><input class='form-control' type='text' name='hometown' maxlength='50'></input></td>
 		</tr>
 		<tr>
 			<td><label>Location:</label></td>
-			<td><input class='form-control' type='text' name='location' maxlength='50' value='<?=$location ?>'</input></td>
+			<td><input class='form-control' type='text' name='location' maxlength='50'></input></td>
 		</tr>
 		<tr>
 			<td><label>School:</label></td>
-			<td><input class='form-control' type='text' name='school' maxlength='50' value='<?=$school ?>'></input></td>
+			<td><input class='form-control' type='text' name='school' maxlength='50'></input></td>
 		</tr>
 		<tr>
 			<td><label>Workplace:</label></td>
-			<td><input class='form-control' type='text' name='workplace' maxlength='50' value='<?=$workplace ?>'></td>
+			<td><input class='form-control' type='text' name='workplace' maxlength='50'></td>
 		</tr>
 		<tr>
 			<td><label>Birthday:</label></td>
-			<td><input class='form-control' type='text' name='birthday' id='datepicker' readonly="readonly" value='<?=$birthday?>'></td>
+			<td><input class='form-control' type='text' name='birthday' id='datepicker' readonly="readonly"></td>
 		</tr>
 		<tr>
 			<td><label>Short Description:</label></td>
-			<td><input class='form-control' type='text' name='description' maxlength='250' value='<?=$description?>'></td>
+			<td><input class='form-control' type='text' name='description' maxlength='250'></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input><img class="load-gif" src="../html/res/load.gif" /></td>
 		</tr>
 		</table>
 	</form>

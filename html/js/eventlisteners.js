@@ -3,10 +3,12 @@ $(document).ready(function(){
 	// Profile Settings Event Listener
 	$("#ps_form").submit(function(event){
 		event.preventDefault();
+		$("#ps_form").find('.load-gif').show();
 		
-		// clear response divs
-		$("#ps_success").css("display", "none");
-		$("#ps_failed").css("display", "none");
+		// hide success div
+		$("#ps_success").hide();
+		$("#ps_failed").hide();
+		
 		$.ajax({
 			url: "../scripts/update_user_info.php",
 			type: "GET",
@@ -15,10 +17,11 @@ $(document).ready(function(){
 			success: function(data){
 				// json response
 				if(data.success){
-					$("#ps_success").css("display", "block");
+					$("#ps_success").show();
 				}else{
-					$("#ps_success").css("display", "block");
+					$("#ps_success").show();
 				}
+				$("#ps_form").find('.load-gif').hide();
 			},
 			error:function(xhr, error){
 				console.log(xhr); console.log(error);
@@ -29,11 +32,11 @@ $(document).ready(function(){
 	//Account Settings Event Listener 
 	$("#as_form").submit(function(event){
 		event.preventDefault();
-		$('#as_form').find('#load-gif').show();
+		$('#as_form').find('.load-gif').show();
 		
 		//clear response divs
-		$("#as_success").css("display", "none");
-		$("#as_failed").css("display", "none");
+		$("#as_success").hide();
+		$("#as_failed").hide();
 		$.ajax({
 			url:"../scripts/update_user.php",
 			type:"GET",
@@ -42,12 +45,12 @@ $(document).ready(function(){
 			success: function(data){
 				//json response
 				if(data.success){
-					$("#as_success").css("display", "block");
+					$("#as_success").show();
 				}	
 				else{
-					$("#as_failed").css("display", "block");
+					$("#as_failed").show();
 				}
-				$('#as_form').find('#load-gif').hide();
+				$('#as_form').find('.load-gif').hide();
 			},
 			error:function(xhr, error){
 				console.log(xhr); console.log(error);
@@ -61,8 +64,8 @@ $(document).ready(function(){
 
 		$('#ap_form').find('#load-gif').show();
 		//Clear Response Divs
-		$("#ap_success").css("display", "none");
-		$("#ap_failed").css("display", "none");
+		$("#ap_success").hide();
+		$("#ap_failed").hide();
 		$.ajax({
 			url:"../scripts/update_password.php",
 			type:"POST",
@@ -71,10 +74,10 @@ $(document).ready(function(){
 			success:function(data){
 				//json response
 				if(data.success){
-					$("#ap_success").css("display", "block");
+					$("#ap_success").show();
 				}	
 				else{
-					$("#ap_failed").css("display", "block");
+					$("#ap_failed").show();
 				}
 				$('#ap_form').find('#load-gif').hide();
 			},

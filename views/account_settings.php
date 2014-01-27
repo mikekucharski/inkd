@@ -19,10 +19,12 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input><img id="load-gif" src="../html/res/load.gif" /></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input><img class="load-gif" src="../html/res/load.gif" /></td>
 		</tr>
 		</table>
 	</form>
+	
+	<script id="source" language="javascript" type="text/javascript"></script>
 	
 	<div style='display:none;' id='as_success'class='alert alert-success'>
 		<p><b>Success!</b> Your account settings have been updated.</p>
@@ -49,7 +51,7 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input><img id="load-gif" style='display:none;' src="../html/res/load.gif" /></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input><img class="load-gif" src="../html/res/load.gif" /></td>
 		</tr>
 		</table>
 	</form>

@@ -89,6 +89,7 @@ html {overflow: -moz-scrollbars-vertical;overflow-y: scroll;}
 .clear {clear:both;}
 .no-padding {padding:0;}
 .center {float:none; margin-left:auto; margin-right:auto;}
+.load-gif {display:none;}
 
 /*************************************************************/
 /************************* Home Page *************************/

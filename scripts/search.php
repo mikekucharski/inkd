@@ -6,7 +6,9 @@
 	
 	//sanitize input
 	$search = $mysqli->real_escape_string(trim($search));
-	$query="SELECT * FROM user where email = '$search'";
+	$query="SELECT * FROM user 
+			WHERE (CONCAT(first_name, ' ', last_name) LIKE '%$search%') 
+			OR (email='$search')";
 	$result = $mysqli->query($query);
 	if($result !== false && $result->num_rows > 0)
 	{

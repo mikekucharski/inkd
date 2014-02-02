@@ -1,7 +1,7 @@
 $(document).ready(function(){
+
 	// load account settings
-	
-	$("#as_form").ready(function(event){
+	if($("#as_form").length > 0) {
 		$.ajax({
 			async: false,
 			url: "../scripts/get_account_settings.php",
@@ -23,11 +23,10 @@ $(document).ready(function(){
 				console.log(xhr); console.log(error);
             }
 		});
-	});
+	}
 	
 	// load profile settings
-
-	$("#ps_form").ready(function(event){
+	if($("ps_form").length > 0) {
 		$.ajax({
 			async: false,
 			url: "../scripts/get_profile_settings.php",
@@ -51,5 +50,5 @@ $(document).ready(function(){
 				console.log(xhr); console.log(error);
             }
 		});
-	});
+	}
 });

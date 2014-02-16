@@ -20,6 +20,7 @@
 	**/
 	function format_date($datetime)
 	{
+		date_default_timezone_set('America/New_York');
 		$datetime = strtotime($datetime);
 		$day = date("d", $datetime);
 		$month = date("m", $datetime);

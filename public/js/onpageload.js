@@ -4,7 +4,7 @@ $(document).ready(function(){
 	if($("#as_form").length > 0) {
 		$.ajax({
 			async: false,
-			url: "../scripts/get_account_settings.php",
+			url: "scripts/get_account_settings.php",
 			type: "GET",
 			dataType:'json',
 			success: function(response){
@@ -26,10 +26,10 @@ $(document).ready(function(){
 	}
 	
 	// load profile settings
-	if($("ps_form").length > 0) {
+	if($("#ps_form").length > 0) {
 		$.ajax({
 			async: false,
-			url: "../scripts/get_profile_settings.php",
+			url: "scripts/get_profile_settings.php",
 			type: "GET",
 			dataType:'json',
 			success: function(response){

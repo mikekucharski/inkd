@@ -1,6 +1,6 @@
 <?php 
 
-require_once('../includes/helpers.php');
+require_once('includes/helpers.php');
 
 //determine which page to render
 if( isset($_GET['page']))

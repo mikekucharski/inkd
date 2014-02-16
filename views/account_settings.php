@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input><img class="load-gif" src="../html/res/load.gif" /></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Apply Changes'></input><img class="load-gif" src="public/img/load.gif" /></td>
 		</tr>
 		</table>
 	</form>
@@ -51,7 +51,7 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input><img class="load-gif" src="../html/res/load.gif" /></td>
+			<td><input class='btn btn-success' type='submit' name='submit' value='Change Password'></input><img class="load-gif" src="public/img/load.gif" /></td>
 		</tr>
 		</table>
 	</form>

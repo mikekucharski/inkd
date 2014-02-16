@@ -60,7 +60,7 @@
 				$_SESSION['logged_in']=true;
 				$_SESSION['u_id']=$last_id;
 				$_SESSION['first_name']=$first;
-				header("location:../html/index.php?page=home&new_acc=true");
+				header("location:../index.php?page=home&new_acc=true");
 				exit();
 			} else {
 				header("location:../register.php?error=query_fail");

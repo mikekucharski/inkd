@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$("#ps_failed").hide();
 		
 		$.ajax({
-			url: "../scripts/update_user_info.php",
+			url: "scripts/update_user_info.php",
 			type: "GET",
 			data:$(this).serialize(),
 			dataType:'json',
@@ -38,7 +38,7 @@ $(document).ready(function(){
 		$("#as_success").hide();
 		$("#as_failed").hide();
 		$.ajax({
-			url:"../scripts/update_user.php",
+			url:"scripts/update_user.php",
 			type:"GET",
 			data:$(this).serialize(),
 			dataType:'json',
@@ -67,12 +67,13 @@ $(document).ready(function(){
 		$("#ap_success").hide();
 		$("#ap_failed").hide();
 		$.ajax({
-			url:"../scripts/update_password.php",
+			url:"scripts/update_password.php",
 			type:"POST",
 			data:$(this).serialize(),
 			dataType:'json',
 			success:function(data){
 				//json response
+				console.log(data);
 				if(data.success){
 					$("#ap_success").show();
 				}	
@@ -93,7 +94,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var unfriend_form = $(this);
 		$.ajax({
-			url:"../scripts/unfriend.php",
+			url:"scripts/unfriend.php",
 			type:"GET",
 			data: {u_idf: $(this).find("label").text()},
 			dataType:'json',
@@ -115,7 +116,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var friend_form = $(this);
 		$.ajax({
-			url:"../scripts/add_friend.php",
+			url:"scripts/add_friend.php",
 			type:"GET",
 			data: {u_idf: $(this).find("label").text()},
 			dataType:'json',
@@ -137,7 +138,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var post_form = $(this);
 		$.ajax({
-			url:"../scripts/create_post.php",
+			url:"scripts/create_post.php",
 			type:"POST",
 			data: $(this).serialize(),
 			dataType:'json',
@@ -146,7 +147,7 @@ $(document).ready(function(){
 				post_form.find('textarea[name=ink-msg]').val("");  // clear post text area
 				
 				if(data.success){
-					newDiv= "<!--Ink Div--><div id='ink'><!-- Profile Image --><div class='post-img-container'><img class='post-img' src='res/default_profile.jpg' alt='empty'/></div> "+
+					newDiv= "<!--Ink Div--><div id='ink'><!-- Profile Image --><div class='post-img-container'><img class='post-img' src='public/img/default_profile.jpg' alt='empty'/></div> "+
 							"<!-- Ink Header --><div id='ink_header'><div id='header_left'><span><a href='index.php?page=profile&u_id=" + data.u_id + "'> "+
 									"<p>" + data.first_name + " " + data.last_name + "</p></a></span></div><div id='header_right'><span>" + data.post_time + "</span></div></div> "+
 							"<!-- Ink Post --><div id='ink_post'><p>" + data.post_msg + "</p></div> "+

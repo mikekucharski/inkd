@@ -3,6 +3,6 @@
 		<h1>Search Results</h1>
 	</div>
 	 
-	<?php include('../scripts/search.php'); ?>
+	<?php include('scripts/search.php'); ?>
 	
 </div><!-- /column -->

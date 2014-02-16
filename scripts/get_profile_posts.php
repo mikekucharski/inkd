@@ -37,7 +37,7 @@
 				<div id='ink'>
 					<!-- Profile Image -->
 					<div class='post-img-container'>
-						<img class='post-img' src='res/default_profile.jpg' alt='empty'/>
+						<img class='post-img' src='public/img/default_profile.jpg' alt='empty'/>
 					</div>
 
 					<!-- Ink Header -->

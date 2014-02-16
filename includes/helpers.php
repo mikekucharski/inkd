@@ -6,7 +6,7 @@
 	**/
 	function render($template, $data = array())
 	{
-		$path = '../views/' . $template . '.php';
+		$path = 'views/' . $template . '.php';
 		if(file_exists($path))
 		{
 			extract($data);
@@ -32,5 +32,11 @@
 		$time = $month . '/' . $day . '/' . $year . ' | ' . 
 				$hours . ':' . $minutes . ' ' . $time_of_day;
 		return $time;
+	}
+
+	function active_tab($page)
+	{
+		if($page==$_GET['page'])
+			print 'class="active"';
 	}
 ?>

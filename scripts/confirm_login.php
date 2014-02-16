@@ -26,7 +26,7 @@
 				$_SESSION['logged_in']=true;
 				$_SESSION['u_id']=$row['u_id'];
 				$_SESSION['first_name']=$row['first_name'];
-				header('location:../html/index.php?page=home');
+				header('location:../index.php?page=home');
 			}
 			else 
 			{

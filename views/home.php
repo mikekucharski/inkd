@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="column col-lg-4">
-			<img id='home_img' src='res/default_profile.jpg' alt='empty'/>
+			<img id='home_img' src='../public/img/default_profile.jpg' alt='empty'/>
 			<h2 class='display_name' >Temp Name</h2>
 			<div class='prof-info clear col-lg-12'>
 				<div class='page-header'></div>
@@ -19,7 +19,7 @@
 			
 			<!-- pull all posts -->
 			<div id='ink_post_container'>
-				<?php include('../scripts/get_all_posts.php'); ?>
+				<?php include('scripts/get_all_posts.php'); ?>
 			</div>
 		</div>
 	</div>

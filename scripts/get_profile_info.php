@@ -16,6 +16,7 @@
 
 		$query2 = "SELECT * FROM user_info WHERE u_id='$u_id'";
 		$result2=$mysqli->query($query2);
+
 		if($result2 !== false && $result2->num_rows > 0)
 		{
 			$row2 = $result2->fetch_assoc();
@@ -27,7 +28,7 @@
 			$description = $row2['description'];
 			
 			?>
-				<img class='prof-img' src='res/default_profile.jpg'/>
+				<img class='prof-img' src='public/img/default_profile.jpg'/>
 				<h2 class='display_name' ><?=$first?> <?=$last?></h2>
 			<?php
 			
@@ -75,13 +76,12 @@
 			<?php
 			$mysqli->close();
 		}else{
-			$mysqli->close();
 			header('location: index.php?page=404');
-			exit;
+			exit();
 		}
 	}else{
 		$mysqli->close();
 		header('location: index.php?page=404');
-		exit;
+		exit();
 	}
 ?>

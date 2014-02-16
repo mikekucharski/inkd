@@ -14,7 +14,7 @@
 			?>
 			<div  class="col-lg-6 center"  id="search_result">
 				<div class='col-lg-2'>
-					<img src="res/default_profile.jpg" /> 
+					<img src="public/img/default_profile.jpg" /> 
 				</div>
 				<div class='col-lg-8'>
 					<a href="index.php?page=profile&u_id=<?=$row['u_id']?>"><p><?=$row['first_name']?> <?=$row['last_name']?></p></a>

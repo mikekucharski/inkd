@@ -3,6 +3,6 @@
 		<h1>Friends</h1>
 	</div>
 	 
-	<?php include('../scripts/get_friends.php'); ?>
+	<?php include('scripts/get_friends.php'); ?>
 	
 </div><!-- /column -->

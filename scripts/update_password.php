@@ -41,7 +41,7 @@ if (isset($_POST['current_password']) && !empty($_POST['current_password']) &&
 		}
 		else 
 		{
-			$response['success'] = $result;
+			$response['success'] = false;
 			$response['Error_Type'] = "Wrong Current Password";
 		}
 	}else

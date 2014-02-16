@@ -1,14 +1,14 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/login_style.css">
+		<link rel="stylesheet" type="text/css" href="public/css/login_style.css">
 		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap CSS-->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
 		<!-- Bootstrap JS-->
 		<script src="http://code.jquery.com/jquery.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
 
 		<title>Register</title>
 	</head>
@@ -31,7 +31,7 @@
 		
 		<div class="login_container register_container">
 			<h2>Get Ink'd</h2>
-			<form class='login_form' action="../scripts/create_user.php" method="POST">
+			<form class='login_form' action="scripts/create_user.php" method="POST">
 				<table>
 					<tr>
 						<td><label>First Name:</label></td>

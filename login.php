@@ -46,27 +46,25 @@
 		<div class="container">
 			<!-- Example row of columns -->
 			<div class="row">
-			<div class="col-md-4">
-			  <h2>Welcome to Inkd</h2>
-			  <p>Inkd is a social network similar to Facebook and Twitter. Make an account, find your friends, and spill some ink!</p>
-			</div>
-			<div class="col-md-4">
-			  <h2>Register Now!</h2>
-			  <p>Why not? Inkd is completely free.</p>
-			  <a href='register.php'><button type="button" class="btn btn-primary">Register &raquo;</button></a>
-			</div>
-			<div class="col-md-4">
-			  <h2>Contact Us</h2>
-			  <p>Inkd was created by two college students with an aspiration for programming. We'd love to hear your feedback.</p>
-			</div>
+				<div class="col-md-4">
+				  <h2>Welcome to Inkd</h2>
+				  <p>Inkd is a social network similar to Facebook and Twitter. Make an account, find your friends, and spill some ink!</p>
+				</div>
+				<div class="col-md-4">
+				  <h2>Register Now!</h2>
+				  <p>Why not? Inkd is completely free.</p>
+				  <a href='register.php'><button type="button" class="btn btn-primary">Register &raquo;</button></a>
+				</div>
+				<div class="col-md-4">
+				  <h2>Contact Us</h2>
+				  <p>Inkd was created by two college students with an aspiration for programming. We'd love to hear your feedback.</p>
+				</div>
 			
-		  </div>
-
-		  <hr>
-
-		  <footer>
-			<p>&copy; Mike Kucharski & Dhruv Patel</p>
-		  </footer>
+			</div>
+			<hr>
+			<footer>
+				<p>&copy; Mike Kucharski & Dhruv Patel</p>
+			</footer>
 		</div> <!-- /container -->
 	</body>
 </html>

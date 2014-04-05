@@ -43,7 +43,7 @@ switch($page)
 		render('templates/header', array('title' => 'Your Friends'));
 		render('friends');
 		render('templates/footer');
-		break;
+		break;0
 		
 	case 'search_results':
 		if(isset($_GET['search']))

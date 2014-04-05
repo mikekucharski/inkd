@@ -7,15 +7,15 @@
 		<table id='form_table'>
 		<tr>
 			<td><label>First Name:</label></td>
-			<td><input class='form-control' type='text' name='first_name' placeholder='First Name'></input></td>
+			<td><input class='form-control' type='text' name='first_name' placeholder='First Name' value="<?php $first_name = 'mike'; echo $first_name?>"></input></td>
 		</tr>
 		<tr>
 			<td><label>Last Name:</label></td>
-			<td><input class='form-control' type='text' name='last_name' placeholder='Last Name'></input></td>
+			<td><input class='form-control' type='text' name='last_name' placeholder='Last Name' value="<?=$last_name?>"</input></td>
 		</tr>
 		<tr>
 			<td><label>Email Address:</label></td>
-			<td><input class='form-control' type='text' name='email' placeholder='Email Address'></input></td>
+			<td><input class='form-control' type='text' name='email' placeholder='Email Address' value="<?=$email?>></input></td>
 		</tr>
 		<tr>
 			<td></td>

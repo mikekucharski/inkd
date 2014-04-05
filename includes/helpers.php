@@ -6,6 +6,7 @@
 	**/
 	function render($template, $data = array())
 	{
+		exit();
 		$path = 'views/' . $template . '.php';
 		if(file_exists($path))
 		{

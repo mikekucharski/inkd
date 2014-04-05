@@ -33,8 +33,9 @@ switch($page)
 		break;
 		
 	case 'account_settings':
+		include("scripts/get_account_settings.php");
 		render('templates/header', array('title' => 'Account Settings'));
-		render('account_settings');
+		render('account_settings', array('last_name' => $last_name))
 		render('templates/footer');
 		break;
 		

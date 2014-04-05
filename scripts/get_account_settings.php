@@ -10,30 +10,30 @@ $mysqli = connect();
 $query = "SELECT first_name, last_name, email FROM user WHERE u_id='$u_id'";
 $result=$mysqli->query($query);
 
+
 if($result !== false && $result->num_rows > 0) 
 {
 	$row = $result->fetch_assoc();
 	$mysqli->close();
-	
-	$first = $row['first_name'];
-	$last = $row['last_name'];
-	$email = $row['email'];
-	
-	//sanitize output
-	$response = array(
-		'success' => true,
-		'data' => array(
-			'first' => htmlentities($first),
-			'last' => htmlentities($last),
-			'email' => htmlentities($email)
-		)
-	);
-}else{
-	$response = array(
-		'success' => false,
-		'data' => json_decode("{}")
-	);
 }
+$first_name = $row['first_name'];
+$last_name = $row['last_name'];
+$email = $row['email'];
+// 	//sanitize output
+// 	$response = array(
+// 		'success' => true,
+// 		'data' => array(
+// 			'first' => htmlentities($first),
+// 			'last' => htmlentities($last),
+// 			'email' => htmlentities($email)
+// 		)
+// 	);
+// }else{
+// 	$response = array(
+// 		'success' => false,
+// 		'data' => json_decode("{}")
+// 	);
+// }
 
-print json_encode($response);
+// print json_encode($response);
 ?>

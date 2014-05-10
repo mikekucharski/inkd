@@ -9,15 +9,15 @@
 	print $url;
 	
 	$parameter = explode('/', $url);
-	print_r($parameter)
+	print_r($parameter);
 
-	if(isset($parameter[0]) && $parameter[0] != null))
+	if(isset($parameter[0]) && $parameter[0] != null)
 	{
 		$controller = $parameter[0];
 	}
 	if(isset($parameter[1]) && $parameter[1] != null)
 	{
-		$action = parameter[1];
+		$action = $parameter[1];
 	}
 
 	if(file_exists(BASE_URL . 'application/controller/' . $controller .'.php'))

@@ -1,6 +1,6 @@
 <?php
  
-define('BASE_URL', 'http://inkd.com');
+define('BASE_URL', 'http://inkd.com/');
 
  /*
  * All database connection variables

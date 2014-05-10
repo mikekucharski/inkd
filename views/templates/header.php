@@ -12,7 +12,7 @@ if ( !isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true)
 <html>
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-
+	<base href="http://inkd.com/" />
 	<!-- Bootstrap CSS-->
 	<link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 

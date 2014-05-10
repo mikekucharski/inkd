@@ -1,30 +1,36 @@
 <?php
 		
 	require('application/config/config.php');
+	require('application/base/base_controller.php');
+	require('application/base/base_model.php');
 
-	$controller = null;
-	$action = null;
-
-	$url = ltrim($_SERVER['REQUEST_URI'], '/');
-	print $url;
-	
-	$parameter = explode('/', $url);
-	print_r($parameter);
-
-	if(isset($parameter[0]) && $parameter[0] != null)
+	if(isset($_GET["controller"]) & !empty($_GET["controller"]))
 	{
-		$controller = $parameter[0];
-	}
-	if(isset($parameter[1]) && $parameter[1] != null)
-	{
-		$action = $parameter[1];
+		$controller = $_GET["controller"];
+	} else {
+		$controller = 'home';
 	}
 
-	if(file_exists(BASE_URL . 'application/controller/' . $controller .'.php'))
+	if(isset($_GET["action"]) & !empty($_GET["action"]))
 	{
-		require('application/controller/' . $controller .'.php');
+		$action = $_GET["action"];
+	} else {
+		$action = 'index';
 	}
 
-	$ctrl = new $controller;
+	if(file_exists('application/controllers/' . strtolower($controller) .'_controller.php'))
+	{
+		require('application/controllers/' . strtolower($controller) .'_controller.php');
+	} else {
+		require('application/controllers/error_controller.php');
+	}
 
+	$ctrlName = $controller."Controller";
+	$ctrl = new $ctrlName;
+
+	if(method_exists($ctrl, $action)){
+		$ctrl->{$action}();
+	}else{
+		$ctrl->index();
+	}
 ?>

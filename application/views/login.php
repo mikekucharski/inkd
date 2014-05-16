@@ -1,6 +1,6 @@
 <div class="login_container">
 	<h2>Sign In</h2>
-	<form class='login_form' action="scripts/confirm_login.php" method="POST">
+	<form id="loginForm" class='login_form' action="scripts/confirm_login.php" method="POST">
 		<input name='email' type="text" placeholder="Email"/>
 		<input name='pass' type="password" placeholder="Password"/>
 		<input name='login' type="submit" value="Sign In"/><br>

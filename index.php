@@ -1,6 +1,7 @@
 <?php
 		
 	require('application/config/config.php');
+	require('application/lib/Session.php');
 	require('application/base/base_controller.php');
 	require('application/base/base_model.php');
 

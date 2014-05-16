@@ -5,11 +5,11 @@
 		*	Constructor
 		*/
 		function __construct() {
-	    	$this->model =$this->loadModel("login");
+	    	parent::__construct();
 	    }
 
 	    /*
-	    *	renders the login page
+	    *	Page: renders the login page
 	    */
 	    public function index() {
 	    	$title = "Log In";
@@ -19,7 +19,7 @@
 	    }
 
 	    /*
-	    *	renders the register page
+	    *	Page: renders the register page
 	    */
 	    public function register() {
 	    	$title = "Register";
@@ -27,5 +27,35 @@
     		require("application/views/register.php");
     		require("application/views/templates/login_footer.php");
 	    }
+
+	    /*
+	    *	Action: login with ajax
+	    */
+	    public function login() {
+	    	$login_model = $this->loadModel("login");
+	    	$login_success = $login_model->login();
+
+	    	$response = array('success' =>$login_success);
+	    	if($login_success){
+	    		$response['redirectLoc'] = BASE_URL . "home";
+	    	}
+	    	print json_encode($response);
+	    }
+
+
+	    /*
+	    *	Action: register with ajax
+	    */
+	    function registerNewUser() {
+	    	$login_model = $this->loadModel("login");
+	    	$register_success = $login_model->createNewUser();
+	    	
+	    	$response = array('success' =>$register_success);
+	    	if($register_success){
+	    		$response['redirectLoc'] = BASE_URL . "home";
+	    	}
+	   
+	    	print json_encode($response);
+   		}
 	}
 ?>

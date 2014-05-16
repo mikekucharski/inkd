@@ -2,6 +2,8 @@
 		
 	require('application/config/config.php');
 	require('application/lib/Session.php');
+	require('application/lib/Authentication.php');
+	require('application/lib/helpers.php');
 	require('application/base/base_controller.php');
 	require('application/base/base_model.php');
 

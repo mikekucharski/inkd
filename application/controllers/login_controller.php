@@ -42,11 +42,10 @@
 	    	print json_encode($response);
 	    }
 
-
 	    /*
 	    *	Action: register with ajax
 	    */
-	    function registerNewUser() {
+	    public function registerNewUser() {
 	    	$login_model = $this->loadModel("login");
 	    	$register_success = $login_model->createNewUser();
 	    	

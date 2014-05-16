@@ -9,5 +9,7 @@
 		<!-- Bootstrap JS-->
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		
+		<script src="public/js/eventlisteners.js"></script>
 	</body>
 </html>

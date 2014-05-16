@@ -1,11 +1,9 @@
 <?php
 	abstract class BaseController {
 
-		protected $model;
-
 		// Constructor
 		public function __construct() {
-
+			Session::init();
 		}
 
 		public function loadModel($name) {

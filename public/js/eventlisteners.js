@@ -1,5 +1,49 @@
 $(document).ready(function(){
 
+	
+	$("#loginForm").submit(function(event){
+		event.preventDefault();
+
+		// form validation on data
+
+		$.ajax({
+			url: "login/login",
+			type: "POST",
+			data: $(this).serialize(),
+			dataType:'json',
+			success: function(data){
+				console.log(data);
+				if(data.success) {
+					//window.location.replace(data.redirectLoc);
+				}else{
+					// show error
+				}
+			}
+		});
+	});
+
+	$("#registerForm").submit(function(event){
+		event.preventDefault();
+
+		// form validation on data
+
+		$.ajax({
+			url: "login/registerNewUser",
+			type: "POST",
+			data: $(this).serialize(),
+			dataType:'json',
+			success: function(data){
+				console.log(data);
+				if(data.success) {
+					//window.location.replace(data.redirectLoc);
+				}else{
+					// show error
+				}
+			}
+		});
+	});
+	
+
 	// Profile Settings Event Listener
 	$("#ps_form").submit(function(event){
 		event.preventDefault();
@@ -12,7 +56,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: "scripts/update_user_info.php",
 			type: "GET",
-			data:$(this).serialize(),
+			data: $(this).serialize(),
 			dataType:'json',
 			success: function(data){
 				// json response

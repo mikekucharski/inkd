@@ -1,6 +1,6 @@
 <div class="login_container register_container">
 	<h2>Get Ink'd</h2>
-	<form class='login_form' action="scripts/create_user.php" method="POST">
+	<form id="registerForm" class='login_form' action="scripts/create_user.php" method="POST">
 		<table>
 			<tr>
 				<td><label>First Name:</label></td>

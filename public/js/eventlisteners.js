@@ -14,7 +14,7 @@ $(document).ready(function(){
 			success: function(data){
 				console.log(data);
 				if(data.success) {
-					//window.location.replace(data.redirectLoc);
+					window.location.replace(data.redirectLoc);
 				}else{
 					// show error
 				}

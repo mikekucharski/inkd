@@ -11,7 +11,7 @@
 		*	Page: renders the home page and loads all posts
 		*/
 		public function index() {
-			$title = "Home";
+			$title = "Profile";
 			$post_model = $this->loadModel("post");
 			$all_posts = $post_model->getAllPosts();
 			require("application/views/templates/header.php");
@@ -30,7 +30,4 @@
 			print json_encode($post_model->addPost($_POST['ink-msg']));
 		}
 	}
-
-
-
 ?>

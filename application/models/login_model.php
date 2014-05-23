@@ -9,15 +9,11 @@
 			parent::__construct(); // creates db connection
 		}
 
-		public function login() {
+		public function login($email, $password) {
 
-			if( (isset($_POST['email']) && !empty($_POST['email'])) &&
-		 	   (isset($_POST['pass']) && !empty($_POST['pass'])))
+			if( (isset($email) && !empty($email)) &&
+		 	   (isset($password) && !empty($password)))
 			{
-		
-				$email=$_POST['email'];
-				$password =$_POST['pass'];
-				
 				//sanitize input
 				$email = $this->db->real_escape_string(trim($email));
 				$password = $this->db->real_escape_string(trim($password));
@@ -50,18 +46,13 @@
 			}
 		} // end login function
 
-		public function createNewUser() {
-			if (isset($_POST["first"]) && !empty($_POST["first"]) 
-				&& isset($_POST["last"]) && !empty($_POST["last"])
-				&& isset($_POST["email"]) && !empty($_POST["email"])
-				&& isset($_POST["password"]) && !empty($_POST["password"]) 
-				&& isset($_POST["password2"]) && !empty($_POST["password2"]))
+		public function createNewUser($first, $last, $email, $password, $password2) {
+			if (isset($first) && !empty($first) 
+				&& isset($last) && !empty($last)
+				&& isset($email) && !empty($email)
+				&& isset($password) && !empty($password) 
+				&& isset($password2) && !empty($password2))
 			{
-				$first = $_POST["first"];
-				$last = $_POST["last"];
-				$email = $_POST["email"];
-				$password = $_POST["password"];
-				$password2 = $_POST["password2"];
 				
 				if($password != $password2 || strlen($password) < 6 || !filter_var($email, FILTER_VALIDATE_EMAIL) ){
 					return false;

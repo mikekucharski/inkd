@@ -33,7 +33,7 @@
 	    */
 	    public function login() {
 	    	$login_model = $this->loadModel("login");
-	    	$login_success = $login_model->login();
+	    	$login_success = $login_model->login($_POST['email'], $_POST['pass']);
 
 	    	$response = array('success' =>$login_success);
 	    	if($login_success){
@@ -47,7 +47,7 @@
 	    */
 	    public function registerNewUser() {
 	    	$login_model = $this->loadModel("login");
-	    	$register_success = $login_model->createNewUser();
+	    	$register_success = $login_model->createNewUser($_POST["first"], $_POST["last"], $_POST["email"], $_POST["password"], $_POST["password2"]);
 	    	
 	    	$response = array('success' =>$register_success);
 	    	if($register_success){

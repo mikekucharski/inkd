@@ -35,7 +35,7 @@ $(document).ready(function(){
 			success: function(data){
 				console.log(data);
 				if(data.success) {
-					//window.location.replace(data.redirectLoc);
+					window.location.replace(data.redirectLoc);
 				}else{
 					// show error
 				}
@@ -182,7 +182,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var post_form = $(this);
 		$.ajax({
-			url:"scripts/create_post.php",
+			url:"home/addPost",
 			type:"POST",
 			data: $(this).serialize(),
 			dataType:'json',

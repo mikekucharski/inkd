@@ -34,8 +34,8 @@
 			</div><!-- end navbar-header -->
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li <?php active_tab('home')?> ><a href="index.php?page=home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-					<li <?php active_tab('profile')?> ><a href="index.php?page=profile&u_id=<?php print $_SESSION['u_id'];?>" ><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+					<li <?php active_tab('home')?> ><a href="home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+					<li <?php active_tab('profile')?> ><a href="profile/<?=$_SESSION['u_id'];?>" ><i class="glyphicon glyphicon-user"></i> Profile</a></li>
 					<li <?php active_tab('friends')?> ><a href="index.php?page=friends"><i class="glyphicon glyphicon-globe"></i> Friends</a></li>
 					<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> Settings<b class="caret"></b></a>
@@ -44,7 +44,7 @@
 						<li><a href="index.php?page=account_settings">Account Settings</a></li>
 					</ul>
 					</li>
-					<li><a href="scripts/logout.php"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+					<li><a href="login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
 				</ul>
 				<!-- search bar form -->
 				<form class="navbar-form navbar-right" method="get" action="index.php?page=search_results">

@@ -18,5 +18,16 @@
 			require("application/views/home.php");
 			require("application/views/templates/footer.php");
 		}
+
+		/*
+		*	Make post using ajax
+		*/
+		public function addPost() {
+			if( !isset($_POST['ink-msg']) || empty($_POST['ink-msg']) ){
+		 	 	header("location: " . BASE_URL . "404");
+		 	 }
+			$post_model = $this->loadModel('post');
+			print json_encode($post_model->addPost($_POST['ink-msg']));
+		}
 	}
 ?>

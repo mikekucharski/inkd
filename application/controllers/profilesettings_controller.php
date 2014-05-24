@@ -11,6 +11,8 @@
 		*	Page: renders the profile settings page and loads all posts
 		*/
 		public function index() {
+			Auth::verifyLoggedIn();
+
 			$title = "Profile Settings";
 			$user_model = $this->loadModel("user");
 			$ps = $user_model->getProfileSettings();
@@ -29,7 +31,7 @@
 		 	 	print json_encode(array('success' => false));
 		 	}
 
-	    	$$user_model = $this->loadModel("user");
+	    	$user_model = $this->loadModel("user");
 	    	$success = $user_model->updateProfile($_GET['hometown'], $_GET['location'], $_GET['school'], 
 	    											$_GET['workplace'], $_GET['birthday'], $_GET['description']);
 

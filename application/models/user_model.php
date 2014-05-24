@@ -51,7 +51,10 @@
 			$birthday = $this->db->real_escape_string(trim($birthday));
 			$description = $this->db->real_escape_string(trim($description));
 			
-			$query= "UPDATE user_info SET hometown='$hometown',location='$location', school='$school', workplace='$workplace', birthday='$birthday', description='$description' WHERE u_id='$u_id'";
+			$query= "UPDATE user_info 
+				SET hometown='$hometown',location='$location', school='$school', workplace='$workplace', 
+					birthday='$birthday', description='$description' 
+				WHERE u_id='$u_id'";
 			$result=$mysqli->query($query);
 			
 			$response['success'] = $result;

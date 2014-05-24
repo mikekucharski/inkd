@@ -46,7 +46,7 @@
 							<!-- Ink Header -->
 							<div id='ink_header'>
 								<div id='header_left'>
-									<span><a href="index.php?page=profile&u_id=<?=$post['u_id']?>"><p><?php print htmlentities($post['first_name']);?> <?php print htmlentities($post['last_name']);?></p></a></span>
+									<span><a href="profile/<?= $_GET["u_id"]; ?>"><?php print htmlentities($post['first_name']);?> <?php print htmlentities($post['last_name']);?></a></span>
 								</div>
 								<div id='header_right'>
 									<span><?php print format_date($post['post_time']);?></span>

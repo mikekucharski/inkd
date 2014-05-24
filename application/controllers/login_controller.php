@@ -12,6 +12,8 @@
 	    *	Page: renders the login page
 	    */
 	    public function index() {
+	    	Auth::verifyNotLoggedIn();
+
 	    	$title = "Log In";
 	    	require("application/views/templates/login_header.php");
     		require("application/views/login.php");
@@ -22,6 +24,8 @@
 	    *	Page: renders the register page
 	    */
 	    public function register() {
+	    	Auth::verifyNotLoggedIn();
+	    	
 	    	$title = "Register";
 	    	require("application/views/templates/login_header.php");
     		require("application/views/register.php");

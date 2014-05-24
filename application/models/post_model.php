@@ -9,7 +9,7 @@
 
 		public function getAllPosts() {
 			$u_id = Session::get('u_id');
-			$query = "SELECT u.first_name, u.last_name, p.repost_id, p.message, p.post_time  
+			$query = "SELECT u.u_id, u.first_name, u.last_name, p.repost_id, p.message, p.post_time  
 						FROM user u, post p 
 						WHERE p.u_id = u.u_id AND (u.u_id = '$u_id' OR p.u_id  IN 
 						(SELECT u_idf FROM friend WHERE u_id='$u_id'))

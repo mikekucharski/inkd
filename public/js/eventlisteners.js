@@ -82,12 +82,13 @@ $(document).ready(function(){
 		$("#as_success").hide();
 		$("#as_failed").hide();
 		$.ajax({
-			url:"scripts/update_user.php",
+			url:"profilesettings/updateProfileSettings",
 			type:"GET",
 			data:$(this).serialize(),
 			dataType:'json',
 			success: function(data){
 				//json response
+				console.log(data);
 				if(data.success){
 					$("#as_success").show();
 				}	

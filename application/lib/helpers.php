@@ -21,7 +21,13 @@
 
 	function active_tab($page)
 	{
-		if($page == $_GET['controller'])
+		if(isset($_GET['controller'])) {
+			if($page == $_GET['controller']){
+				print 'class="active"';
+			}
+		}
+		else if($page == "home") {
 			print 'class="active"';
+		}
 	}
 ?>

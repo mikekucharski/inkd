@@ -16,7 +16,6 @@
 	<link rel="stylesheet" type="text/css" href="public/css/main.css">
 	<script src="public/js/helpers.js"></script>
 	<script src="public/js/eventlisteners.js"></script>
-	<script src="public/js/onpageload.js"></script>
 	<title><?=$title?></title>
 <head>
 <body>
@@ -30,7 +29,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php?page=home">Ink'd</a>
+				<a class="navbar-brand" href="#">Ink'd</a>
 			</div><!-- end navbar-header -->
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -40,7 +39,7 @@
 					<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> Settings<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="index.php?page=profile_settings">Profile Settings</a></li>
+						<li><a href="profilesettings">Profile Settings</a></li>
 						<li><a href="index.php?page=account_settings">Account Settings</a></li>
 					</ul>
 					</li>

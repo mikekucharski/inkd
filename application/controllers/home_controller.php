@@ -13,7 +13,7 @@
 		public function index() {
 			Auth::verifyLoggedIn();
 
-			$title = "Profile";
+			$title = "Home";
 			$post_model = $this->loadModel("post");
 			$all_posts = $post_model->getAllPosts();
 			require("application/views/templates/header.php");

@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="public/css/main.css">
 	<script src="public/js/helpers.js"></script>
 	<script src="public/js/eventlisteners.js"></script>
+	<script src="public/js/main.js"></script>
 	<title><?=$title?></title>
 <head>
 <body>
@@ -29,7 +30,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Ink'd</a>
+				<a class="navbar-brand" href="/home">Ink'd</a>
 			</div><!-- end navbar-header -->
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">

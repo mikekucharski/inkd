@@ -29,7 +29,7 @@
 			</div>
 		</div> <!-- End leftbar -->
 		
-		<div  class="col-lg-7">
+		<div  class="col-lg-8">
 			<?php if($profile_posts === null){ ?>
 					<div id='ink'>
 						<p style='text-align:center;'>No posts yet</p>

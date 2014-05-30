@@ -193,8 +193,8 @@ $(document).ready(function(){
 				
 				if(data.success){
 					newDiv= "<!--Ink Div--><div id='ink'><!-- Profile Image --><div class='post-img-container'><img class='post-img' src='public/img/default_profile.jpg' alt='empty'/></div> "+
-							"<!-- Ink Header --><div id='ink_header'><div id='header_left'><span><a href='index.php?page=profile&u_id=" + data.u_id + "'> "+
-									"<p>" + data.first_name + " " + data.last_name + "</p></a></span></div><div id='header_right'><span>" + data.post_time + "</span></div></div> "+
+							"<!-- Ink Header --><div id='ink_header'><div id='header_left'><span><a href='profile/" + data.u_id + "'> "+
+									 data.first_name + " " + data.last_name + "</a></span></div><div id='header_right'><span>" + data.post_time + "</span></div></div> "+
 							"<!-- Ink Post --><div id='ink_post'><p>" + data.post_msg + "</p></div> "+
 							"<!-- Ink Options --><div id='ink_options'> "+
 							"<a href='#'><span class='label-danger label'><i class='glyphicon glyphicon-heart white'></i></span> Like</a> "+

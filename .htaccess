@@ -5,14 +5,12 @@ RewriteEngine ON
 RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
 
 ErrorDocument 404 /404
 
-RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule (.*)/$ /$1 [R=301]
-
+RewriteRule ^$ /home [L,R=301]
 RewriteRule ^profile/([0-9]+)/?$ index.php?controller=profile&action=index&u_id=$1 [L]
 RewriteRule ^([a-zA-Z-]+)/([a-zA-Z-]+)/?$ index.php?controller=$1&action=$2 [L]
 RewriteRule ^([a-zA-Z-]+)/?$ index.php?controller=$1&action=index [L]

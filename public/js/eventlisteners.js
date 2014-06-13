@@ -77,12 +77,11 @@ $(document).ready(function(){
 	$("#as_form").submit(function(event){
 		event.preventDefault();
 		$('#as_form').find('.load-gif').show();
-		
 		//clear response divs
 		$("#as_success").hide();
 		$("#as_failed").hide();
 		$.ajax({
-			url:"xxx",
+			url:"accountsettings/updateAccountInfo",
 			type:"GET",
 			data:$(this).serialize(),
 			dataType:'json',
@@ -107,12 +106,12 @@ $(document).ready(function(){
 	$("#ap_form").submit(function(event){
 		event.preventDefault();
 
-		$('#ap_form').find('#load-gif').show();
+		$('#ap_form').find('.load-gif').show();
 		//Clear Response Divs
 		$("#ap_success").hide();
 		$("#ap_failed").hide();
 		$.ajax({
-			url:"scripts/update_password.php",
+			url:"accountsettings/changePassword",
 			type:"POST",
 			data:$(this).serialize(),
 			dataType:'json',
@@ -125,7 +124,7 @@ $(document).ready(function(){
 				else{
 					$("#ap_failed").show();
 				}
-				$('#ap_form').find('#load-gif').hide();
+				$('#ap_form').find('.load-gif').hide();
 			},
 			error:function(xhr, error){
 				console.log(xhr); console.log(error);

@@ -33,4 +33,4 @@
 			print json_encode($post_model->addPost($_POST['ink-msg']));
 		}
 	}
-?>
+?>s

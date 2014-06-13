@@ -26,6 +26,22 @@
 			return $data;
 		}
 
+
+		public function getAccountSettings() {
+			$u_id = Session::get('u_id');
+
+			$query = "SELECT first_name, last_name, email FROM user WHERE u_id='$u_id'";
+			$result=$this->db->query($query);
+
+			if($result !== false && $result->num_rows > 0) 
+			{
+				$row = $result->fetch_assoc();
+				return $row;
+			}else {	
+				return null;
+			}
+		}
+
 		public function getProfileSettings() {
 			$u_id = Session::get("u_id");
 		
@@ -41,6 +57,58 @@
 			}else{
 				return null;
 			}
+		}
+
+		public function changePassword($current_password, $password1, $password2) {
+				
+			if(($password1 != $password2) || (strlen($password1) < 6))
+			{
+				return array('success' => false);
+			}
+
+			$u_id=Session::get('u_id');
+			
+			$current_password = $this->db->real_escape_string(trim($current_password));
+			$password1 = $this->db->real_escape_string(trim($password1));
+			$password2 = $this->db->real_escape_string(trim($password2));
+			
+			$query ="SELECT password, salt FROM user WHERE u_id='$u_id'";
+			$result=$this->db->query($query);
+			
+			if ($result !== false && $result->num_rows > 0) 
+			{
+				$row = $result->fetch_assoc();
+				if(hash('sha256', $row['salt'].$current_password)==$row['password'])
+				{
+					$new_password = hash('sha256', $row['salt'].$password1);
+					$query2= "UPDATE user SET password='$new_password' WHERE u_id = '$u_id'";
+					$result2=$this->db->query($query2);
+					
+					return array('success' => true);
+				}
+				else 
+				{
+					return array('success' => false);
+				}
+			}else
+			{
+				return array('success' => false);
+			}
+
+		}
+
+		public function updateAccountInfo($first, $last, $email) {
+			
+			$u_id = Session::get('u_id');
+
+			$first = $this->db->real_escape_string(trim($first));
+			$last = $this->db->real_escape_string(trim($last));
+			$email = $this->db->real_escape_string(trim($email));
+			
+			$query = "UPDATE user SET first_name='$first', last_name='$last', email='$email'  WHERE u_id='$u_id'";
+			$result=$this->db->query($query);
+			
+			return array('success' => $result);
 		}
 
 		public function updateProfile($hometown, $location, $school, $workplace, $birthday, $description) {
@@ -60,3 +128,5 @@
 			$response['success'] = $result;
 	    }
 	}
+
+?>

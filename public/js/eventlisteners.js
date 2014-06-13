@@ -54,7 +54,7 @@ $(document).ready(function(){
 		$("#ps_failed").hide();
 		
 		$.ajax({
-			url: "scripts/update_user_info.php",
+			url: "profilesettings/updateProfileSettings",
 			type: "GET",
 			data: $(this).serialize(),
 			dataType:'json',
@@ -82,7 +82,7 @@ $(document).ready(function(){
 		$("#as_success").hide();
 		$("#as_failed").hide();
 		$.ajax({
-			url:"profilesettings/updateProfileSettings",
+			url:"xxx",
 			type:"GET",
 			data:$(this).serialize(),
 			dataType:'json',

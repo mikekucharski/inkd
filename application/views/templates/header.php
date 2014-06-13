@@ -16,7 +16,6 @@
 	<link rel="stylesheet" type="text/css" href="public/css/main.css">
 	<script src="public/js/helpers.js"></script>
 	<script src="public/js/eventlisteners.js"></script>
-	<script src="public/js/onpageload.js"></script>
 	<title><?=$title?></title>
 <head>
 <body>
@@ -41,7 +40,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> Settings<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="index.php?page=profile_settings">Profile Settings</a></li>
-						<li><a href="index.php?page=account_settings">Account Settings</a></li>
+						<li><a href="accountsettings">Account Settings</a></li>
 					</ul>
 					</li>
 					<li><a href="login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>

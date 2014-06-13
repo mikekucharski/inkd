@@ -13,6 +13,7 @@ ErrorDocument 404 /404
 RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule (.*)/$ /$1 [R=301]
 
-RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/?$ index.php?controller=$1&action=$2 [L]
-RewriteRule ^([a-zA-Z]+)/?$ index.php?controller=$1&action=index [L]
-RewriteRule ^profile/([0-9]+)/?$ index.php?controller=profile&action=index&u_id=$1 [L]
+#RewriteRule ^([a-zA-Z-]+)/([a-zA-Z-]+)/?$ https://www.google.com/hello/hell [QSA,L]
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z-]+)/?$ index.php?controller=$1&action=$2 [QSA,L]
+RewriteRule ^([a-zA-Z-]+)/?$ index.php?controller=$1&action=index [QSA,L]
+RewriteRule ^profile/([0-9]+)/?$ index.php?controller=profile&action=index&u_id=$1 [QSA,L]

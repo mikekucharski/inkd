@@ -26,9 +26,10 @@
 		*	Action: Called by ajax, updates users profile settings
 		*/
 		public function updateProfileSettings(){
-			if(!isset($_GET['hometown']) || !isset($GET['location']) || !isset($_GET['school']) ||
-				!isset($_GET['workplace']) || !isset($GET['birthday']) || !isset($_GET['description']) ){
+			if(!isset($_GET['hometown']) || !isset($_GET['location']) || !isset($_GET['school']) ||
+				!isset($_GET['workplace']) || !isset($_GET['birthday']) || !isset($_GET['description']) ){
 		 	 	print json_encode(array('success' => false));
+		 	 	return;
 		 	}
 
 	    	$user_model = $this->loadModel("user");

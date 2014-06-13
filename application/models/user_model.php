@@ -112,6 +112,9 @@
 		}
 
 		public function updateProfile($hometown, $location, $school, $workplace, $birthday, $description) {
+
+			$u_id = Session::get('u_id');
+
 			$hometown = $this->db->real_escape_string(trim($hometown));
 			$location = $this->db->real_escape_string(trim($location));
 			$school = $this->db->real_escape_string(trim($school));
@@ -123,9 +126,10 @@
 				SET hometown='$hometown',location='$location', school='$school', workplace='$workplace', 
 					birthday='$birthday', description='$description' 
 				WHERE u_id='$u_id'";
-			$result=$mysqli->query($query);
+			$result=$this->db->query($query);
 			
 			$response['success'] = $result;
+			return array('success' => $result);
 	    }
 	}
 

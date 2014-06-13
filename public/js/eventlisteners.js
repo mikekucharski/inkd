@@ -63,7 +63,7 @@ $(document).ready(function(){
 				if(data.success){
 					$("#ps_success").show();
 				}else{
-					$("#ps_success").show();
+					$("#ps_failed").show();
 				}
 				$("#ps_form").find('.load-gif').hide();
 			},

@@ -7,7 +7,7 @@
 				<div class='page-header'></div>
 			</div>
 		</div>
-		<div class="col-lg-7">
+		<div class="col-lg-8">
 
 			<!--Body content-->
 			<div id="ink_spill">

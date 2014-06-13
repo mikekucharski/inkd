@@ -11,7 +11,18 @@ class Auth
         // redirect user to login page
         if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             Session::destroy();
-            header('location: ' . URL . 'login');
+            header('location: ' . BASE_URL . 'login');
+        }
+    }
+
+    public static function verifyNotLoggedIn()
+    {
+        // initialize the session
+        Session::init();
+
+        // if user is already logged in, then redirect to home page
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+            header('location: ' . BASE_URL . 'home');
         }
     }
 }

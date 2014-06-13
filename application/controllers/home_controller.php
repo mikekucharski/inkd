@@ -11,7 +11,9 @@
 		*	Page: renders the home page and loads all posts
 		*/
 		public function index() {
-			$title = "Profile";
+			Auth::verifyLoggedIn();
+
+			$title = "Home";
 			$post_model = $this->loadModel("post");
 			$all_posts = $post_model->getAllPosts();
 			require("application/views/templates/header.php");
@@ -23,6 +25,7 @@
 		*	Make post using ajax
 		*/
 		public function addPost() {
+			
 			if( !isset($_POST['ink-msg']) || empty($_POST['ink-msg']) ){
 		 	 	header("location: " . BASE_URL . "404");
 		 	 }

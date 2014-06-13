@@ -11,6 +11,8 @@
 		*	Page: renders the home page and loads all posts
 		*/
 		public function index() {
+			Auth::verifyLoggedIn();
+			
 			if( !isset($_GET["u_id"]) || empty($_GET["u_id"]) ){
 				header("location: " . BASE_URL . "404");
 			}

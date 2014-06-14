@@ -11,7 +11,7 @@
 		*	Page: render account settings page and load account info
 		*/
 		public function index() {
-			//Auth::verifyLoggedIn();
+			Auth::verifyLoggedIn();
 			$title = "Account Settings";
 			$user_model = $this->loadModel("user");
 			$as = $user_model->getAccountSettings();
@@ -32,11 +32,12 @@
 		*/
 		public function changePassword() {
 
-			if (!isset($_POST['current_password']) && empty($_POST['current_password']) &&
-			   (!isset($_POST['password1']) && empty($_POST['password1'])) &&
-			   (!isset($_POST['password2']) && empty($_POST['password2'])))
+			if (!isset($_POST['current_password']) || empty($_POST['current_password']) ||
+			   (!isset($_POST['password1']) || empty($_POST['password1'])) ||
+			   (!isset($_POST['password2']) || empty($_POST['password2'])))
 			{
-				header("location: " . BASE_URL . "404");
+				print json_encode(array('success' => false));
+		 	 	return;
 			}
 
 			$user_model = $this->loadModel("user");
@@ -48,11 +49,12 @@
 		*	 Change Account Settings
 		*/
 		public function updateAccountInfo() {
-			if (!isset($_GET["first_name"]) && empty($_GET["first_name"]) &&
-				!isset($_GET["last_name"]) && empty($_GET["last_name"]) &&
-				!isset($_GET["email"]) && empty($_GET["email"]) && filter_var($_GET["email"], FILTER_VALIDATE_EMAIL))
+			if (!isset($_GET["first_name"]) || empty($_GET["first_name"]) ||
+				!isset($_GET["last_name"]) || empty($_GET["last_name"]) ||
+				!isset($_GET["email"]) || empty($_GET["email"]) || !filter_var($_GET["email"], FILTER_VALIDATE_EMAIL))
 			{
-				header("location: " . BASE_URL . "404");
+				print json_encode(array('success' => false));
+		 	 	return;
 			}
 
 			$user_model = $this->loadModel('user');

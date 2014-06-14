@@ -26,11 +26,13 @@
 		*/
 		public function addPost() {
 			
-			if( !isset($_POST['ink-msg']) || empty($_POST['ink-msg']) ){
-		 	 	header("location: " . BASE_URL . "404");
+			if(!isset($_POST['ink-msg']) || empty($_POST['ink-msg']) ){
+		 	 	print json_encode(array('success' => false));
+		 	 	return;
 		 	 }
 			$post_model = $this->loadModel('post');
-			print json_encode($post_model->addPost($_POST['ink-msg']));
+			$response = $post_model->addPost($_POST['ink-msg']);
+			print json_encode($response);
 		}
 	}
-?>s
+?>

@@ -181,6 +181,7 @@ $(document).ready(function(){
 	$("#create_post_form").submit(function(event){
 		event.preventDefault();
 		var post_form = $(this);
+		if (post_form.find('textarea[name=ink-msg]').val().trim() ==='') {return false;} 
 		$.ajax({
 			url:"home/addPost",
 			type:"POST",

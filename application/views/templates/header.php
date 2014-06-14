@@ -48,7 +48,7 @@
 					<li><a href="login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
 				</ul>
 				<!-- search bar form -->
-				<form class="navbar-form navbar-right" method="get" action="index.php?page=search_results">
+				<form id="nav_search_form" class="navbar-form navbar-right" method="get">
 					<div class="form-group">
 						<input name="search" id="nav_search_bar" type="text" class="form-control search-query" placeholder="Search" data-provide="typeahead" autocomplete="off">
 						<input hidden name="page" type='text' value='search_results'/>

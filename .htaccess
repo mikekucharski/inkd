@@ -12,6 +12,7 @@ ErrorDocument 404 /404
 
 
 RewriteRule ^$ /home [L,R=301]
+RewriteRule ^search/(.*)/?$ index.php?controller=search&action=index&search=$1 [QSA,L]
 RewriteRule ^([a-zA-Z-]+)/([a-zA-Z-]+)/?$ index.php?controller=$1&action=$2 [QSA,L]
 RewriteRule ^([a-zA-Z-]+)/?$ index.php?controller=$1&action=index [QSA,L]
 RewriteRule ^profile/([0-9]+)/?$ index.php?controller=profile&action=index&u_id=$1 [QSA,L]

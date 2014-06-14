@@ -183,7 +183,7 @@ $(document).ready(function(){
 	$("#create_post_form").submit(function(event){
 		event.preventDefault();
 		var post_form = $(this);
-		if (post_form.find('textarea[name=ink-msg]').val().trim() ==='') {return false;} 
+		if (post_form.find('textarea[name=ink-msg]').val().trim() ==='') {return false;qq} 
 		$.ajax({
 			url:"home/addPost",
 			type:"POST",
@@ -212,5 +212,12 @@ $(document).ready(function(){
             }
 		});
 	});	
+	
+	//Search Event Listener
+	$("#nav_search_form").submit(function(event){
+		event.preventDefault();
+		var search = $(this).find("#nav_search_bar").val();
+		window.location.replace("http://inkd.com/search/" + search);
+	});
 });
 

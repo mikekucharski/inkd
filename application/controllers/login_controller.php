@@ -38,7 +38,8 @@
 	    public function login() {
 	    	if(!isset($_POST['email']) || empty($_POST['email']) 
 		 	   || !isset($_POST['pass']) || empty($_POST['pass'])){
-		 	 	header("location: " . BASE_URL . "404");
+		 	 	print json_encode(array('success'=>false));
+		 		return;
 		 	}
 
 	    	$login_model = $this->loadModel("login");
@@ -60,7 +61,8 @@
 				|| !isset($_POST["email"]) || empty($_POST["email"])
 				|| !isset($_POST["password"]) || empty($_POST["password"]) 
 				|| !isset($_POST["password2"]) || empty($_POST["password2"])){
-		 	 	header("location: " . BASE_URL . "404");
+		 	 	print json_encode(array('success'=>false));
+		 		return;
 		 	}
 
 	    	$login_model = $this->loadModel("login");

@@ -3,7 +3,6 @@
 		<h1>Search Results</h1>
 	</div>
 	 
-	<!---<?php include('scripts/search.php'); ?> -->
 	<?php if($all_results === null){ ?>
 		 <div class="alert alert-danger col-sm-6 center">No Search Results Found for "<?=$_GET['search']?>"</div>
 	<?php }else{
@@ -25,7 +24,7 @@
 				$uf_status="none";
 			}
 			?>
-			<div  class="col-lg-6 center"  id="search_result">
+			<div class="col-lg-6 center search_result">
 				<div class='col-lg-2'>
 					<img src="public/img/default_profile.jpg" /> 
 				</div>

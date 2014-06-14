@@ -51,6 +51,7 @@
 			$query ="INSERT INTO friend(u_id, u_idf) VALUES('$u_id','$u_idf')";
 			$result = $this->db->query($query);
 			return $result;
+		}
 
 		/*
 		* 	Search

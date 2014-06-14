@@ -26,9 +26,9 @@
 		*/
 		public function addPost() {
 
-			if( !isset($_POST['ink-msg']) || empty($_POST['ink-msg']) ){
-		 		print json_encode(array('success' => false));
-		 		return;
+			if(!isset($_POST['ink-msg']) || empty($_POST['ink-msg']) ){
+		 	 	print json_encode(array('success' => false));
+		 	 	return;
 		 	}
 
 			$post_model = $this->loadModel('post');

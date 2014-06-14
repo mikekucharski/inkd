@@ -36,8 +36,8 @@
 	    *	Action: login with ajax
 	    */
 	    public function login() {
-	    	if(!isset($_POST['email']) && empty($_POST['email']) 
-		 	   && !isset($_POST['pass']) && empty($_POST['pass'])){
+	    	if(!isset($_POST['email']) || empty($_POST['email']) 
+		 	   || !isset($_POST['pass']) || empty($_POST['pass'])){
 		 	 	header("location: " . BASE_URL . "404");
 		 	}
 
@@ -55,11 +55,11 @@
 	    *	Action: register with ajax
 	    */
 	    public function registerNewUser() {
-	    	if (!isset($_POST["first"]) && empty($_POST["first"]) 
-				&& !isset($_POST["last"]) && empty($_POST["last"])
-				&& !isset($_POST["email"]) && empty($_POST["email"])
-				&& !isset($_POST["password"]) && empty($_POST["password"]) 
-				&& !isset($_POST["password2"]) && empty($_POST["password2"])){
+	    	if (!isset($_POST["first"]) || empty($_POST["first"]) 
+				|| !isset($_POST["last"]) || empty($_POST["last"])
+				|| !isset($_POST["email"]) || empty($_POST["email"])
+				|| !isset($_POST["password"]) || empty($_POST["password"]) 
+				|| !isset($_POST["password2"]) || empty($_POST["password2"])){
 		 	 	header("location: " . BASE_URL . "404");
 		 	}
 

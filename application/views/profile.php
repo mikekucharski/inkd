@@ -7,12 +7,12 @@
 			<h2 class='display_name'><?=$p_info['first_name']; ?> <?=$p_info['last_name']; ?></h2>
 
 			<div class='col-lg-3 no-padding'>
-				<form id='friend_form' class='friend_form' style='display:<?=$f_button?>'>
+				<form class='friend_form' style='display:<?=$f_button?>'>
 					<button type='submit' class='btn btn-primary'>Add Friend</button>
 					<label name="u_idf" hidden><?= $_GET["u_id"]; ?></label>
 				</form>
 				
-				<form id="unfriend_form" class='unfriend_form' style='display:<?=$uf_button?>'>
+				<form class='unfriend_form' style='display:<?=$uf_button?>'>
 					<button type='submit' class='btn btn-success'>Friends</button> 
 					<label name="u_idf" hidden><?= $_GET["u_id"]; ?></label>
 				</form>

@@ -37,7 +37,7 @@
 				<ul class="nav navbar-nav">
 					<li <?php active_tab('home')?> ><a href="home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
 					<li <?php active_tab('profile')?> ><a href="profile/<?=$_SESSION['u_id'];?>" ><i class="glyphicon glyphicon-user"></i> Profile</a></li>
-					<li <?php active_tab('friends')?> ><a href="index.php?page=friends"><i class="glyphicon glyphicon-globe"></i> Friends</a></li>
+					<li <?php active_tab('friends')?> ><a href="friends"><i class="glyphicon glyphicon-globe"></i> Friends</a></li>
 					<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> Settings<b class="caret"></b></a>
 					<ul class="dropdown-menu">

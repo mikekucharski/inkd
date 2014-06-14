@@ -24,7 +24,8 @@
 				$uf_status="none";
 			}
 			?>
-			<div  class="col-lg-6 center search_result">
+
+			<div class="col-lg-6 center search_result">
 				<div class='col-lg-2'>
 					<img src="public/img/default_profile.jpg" /> 
 				</div>

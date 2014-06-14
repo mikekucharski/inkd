@@ -254,29 +254,28 @@ html {overflow: -moz-scrollbars-vertical;overflow-y: scroll;}
 /************************* Search Page *************************/
 /****************************************************************/
 
-#search_result
+.search_result
 { 
 	height:90px;
 	padding:10px;
-	border-top:1px solid lightgrey;
 	border-bottom:1px solid lightgrey;
 }
 
-#search_result img
+.search_result img
 {
 	height:70px;
 	width:70px;
 	border:1px solid lightgrey;
 }
 
-#search_result p:first-child
+.search_result p:first-child
 {
 	font-family: 'Raleway', ariel, serif;
 	font-size:14px;
 	font-weight:bold;
 }
 
-#search_result p:nth-child(2)
+.search_result p:nth-child(2)
 {
 	font-family: 'Raleway', ariel, serif;
 	font-size:14px;

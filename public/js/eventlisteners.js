@@ -138,15 +138,16 @@ $(document).ready(function(){
 		event.preventDefault();
 		var unfriend_form = $(this);
 		$.ajax({
-			url:"scripts/unfriend.php",
+			url:"friends/unfriend",
 			type:"GET",
 			data: {u_idf: $(this).find("label").text()},
 			dataType:'json',
 			success:function(data){
 				//json response
+				console.log(data);
 				if(data.success){
 					unfriend_form.hide();
-					unfriend_form.parent().find('#friend_form').show();
+					unfriend_form.parent().find('.friend_form').show();
 				}	
 			},
 			error:function(xhr, error){
@@ -160,15 +161,16 @@ $(document).ready(function(){
 		event.preventDefault();
 		var friend_form = $(this);
 		$.ajax({
-			url:"scripts/add_friend.php",
+			url:"friends/addfriend",
 			type:"GET",
 			data: {u_idf: $(this).find("label").text()},
 			dataType:'json',
 			success:function(data){
 				//json response
+				console.log(data);
 				if(data.success){
 					friend_form.hide();
-					friend_form.parent().find('#unfriend_form').show();	
+					friend_form.parent().find('.unfriend_form').show();	
 				}	
 			},
 			error:function(xhr, error){

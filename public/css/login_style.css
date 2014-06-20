@@ -27,7 +27,8 @@
 }
 
 #main
-{
+{	
+	padding-top:65px;
 	padding-bottom:50px;
 }
 
@@ -47,7 +48,7 @@
 	display:block;
 	width:700px;
 	margin: 50 auto;
-	margin-top:125px;
+	margin-top:60px;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#bdecff),
             color-stop(90%,#94d2eb));
 	border-radius:7px;
@@ -58,7 +59,6 @@
 .register_container
 {
 	padding:10px;
-	margin-top:100px;
 }
 
 .login_container h2{

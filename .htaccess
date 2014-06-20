@@ -8,7 +8,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 RewriteCond %{REQUEST_FILENAME} !-f
 
-ErrorDocument 404 /404
+ErrorDocument 404 /error
 
 
 RewriteRule ^$ /home [L,R=301]

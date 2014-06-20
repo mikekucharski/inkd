@@ -15,13 +15,13 @@
 			$email = $this->db->real_escape_string(trim($email));
 			$password = $this->db->real_escape_string(trim($password));
 			
-			$query ="SELECT * FROM user WHERE email='$email'";
+			$query ="SELECT u_id, first_name, hash FROM user WHERE email='$email'";
 			$result = $this->db->query($query);
 			
 			if ($result !== false && $result->num_rows > 0) 
 			{
 				$row = $result->fetch_assoc();
-				if(hash('sha256', $row['salt'].$password)==$row['password'])
+				if(password_verify($password, $row['hash']))
 				{
 					Session::init();
 					Session::set('logged_in', true);
@@ -44,26 +44,21 @@
 			if($password != $password2 || strlen($password) < 6 || !filter_var($email, FILTER_VALIDATE_EMAIL) ){
 				return false;
 			}else{
-				//All good, save data
-				
-				//Salt the password
-				define('SALT_LENGTH', 20);
-				$salt='';
-				$character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-				for ($i=0; $i<20; $i++)
-				{
-					$salt.=$character[rand(0, (strlen($character)-1))];
-				}
-				
-				$password = hash('sha256', $salt.$password);
+
+				/*
+				* password_hash() php 5 function
+				* returns a hash, includes an an automatically generated salt
+				* this allows password_verify() to check the password without storage of salt
+				*/
+				$hash = password_hash($password, PASSWORD_DEFAULT);
 				
 				//sanitize input
 				$first = $this->db->real_escape_string(trim($first));
 				$last = $this->db->real_escape_string(trim($last));
 				$email = $this->db->real_escape_string(trim($email));
-				$password = $this->db->real_escape_string(trim($password));
+				$hash = $this->db->real_escape_string($hash);
 				
-				$query = "INSERT INTO user(first_name, last_name, email, password, salt) VALUES('$first', '$last', '$email', '$password', '$salt')";
+				$query = "INSERT INTO user(first_name, last_name, email, hash) VALUES('$first', '$last', '$email', '$hash')";
 				$result= $this->db->query($query);
 				$last_id= $this->db->insert_id;
 				

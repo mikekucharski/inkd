@@ -68,20 +68,21 @@
 
 			$u_id=Session::get('u_id');
 			
-			$current_password = $this->db->real_escape_string(trim($current_password));
-			$password1 = $this->db->real_escape_string(trim($password1));
-			$password2 = $this->db->real_escape_string(trim($password2));
+			$current_password = $this->db->real_escape_string($current_password);
+			$password1 = $this->db->real_escape_string($password1);
+			$password2 = $this->db->real_escape_string($password2);
 			
-			$query ="SELECT password, salt FROM user WHERE u_id='$u_id'";
+			$query ="SELECT hash FROM user WHERE u_id='$u_id'";
 			$result=$this->db->query($query);
 			
 			if ($result !== false && $result->num_rows > 0) 
 			{
 				$row = $result->fetch_assoc();
-				if(hash('sha256', $row['salt'].$current_password)==$row['password'])
+
+				if(password_verify($current_password, $row['hash']))
 				{
-					$new_password = hash('sha256', $row['salt'].$password1);
-					$query2= "UPDATE user SET password='$new_password' WHERE u_id = '$u_id'";
+					$new_password = password_hash($password1, PASSWORD_DEFAULT);
+					$query2= "UPDATE user SET hash='$new_password' WHERE u_id = '$u_id'";
 					$result2=$this->db->query($query2);
 					
 					return array('success' => true);

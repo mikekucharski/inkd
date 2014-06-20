@@ -10,8 +10,7 @@ CREATE TABLE IF NOT EXISTS `user`
 	first_name VARCHAR(20) NOT NULL,
 	last_name VARCHAR(20) NOT NULL,
 	email VARCHAR (60) NOT NULL,
-	password VARCHAR(64) NOT NULL,
-	salt VARCHAR(20) NOT NULL,
+	hash VARCHAR(60) NOT NULL,
 	PRIMARY KEY (u_id)
 );
 
@@ -80,7 +79,7 @@ CREATE TABLE IF NOT EXISTS like_comment (
 
 /* TESTING DATA */
 /* MIKE */
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Mike', 'Kucharski', 'mike@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Mike', 'Kucharski', 'mike@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES((select max(u_id) from user),'hometown','location','school','workplace','birthday','Hi there');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 2', '2013-11-10 14:52:54');
@@ -91,7 +90,7 @@ INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) f
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 7', '2013-11-15 14:52:54');
 
 /* Dhruv */
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Dhruv', 'Patel', 'dhruv@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Dhruv', 'Patel', 'dhruv@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES((select max(u_id) from user),'hometown','location','school','workplace','birthday','Hi there');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Dhruv Post Fake Post 1', '2013-11-09 14:52:54');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Dhruv Post Fake Post 2', '2013-11-10 14:52:54');
@@ -102,7 +101,7 @@ INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) f
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Dhruv Post Fake Post 7', '2013-11-15 14:52:54');
 
 /* Ahsley */
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Ashley', 'Packard', 'ashley@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Ashley', 'Packard', 'ashley@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES((select max(u_id) from user),'hometown','location','school','workplace','birthday','Hi there');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Ashley Post Fake Post 1', '2013-11-09 14:52:54');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Ashley Post Fake Post 2', '2013-11-10 14:52:54');
@@ -113,68 +112,68 @@ INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) f
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Ashley Post Fake Post 7', '2013-11-15 14:52:54');
 
 /** MORE MOCK DATA **/
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Mike', 'K', 'mike4@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Mike', 'K', 'mike4@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Mike', 'Kuch', 'mike5@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Mike', 'Kuch', 'mike5@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Michael', 'Kucharski', 'mike6@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Michael', 'Kucharski', 'mike6@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Mikey', 'K', 'mike7@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Mikey', 'K', 'mike7@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Mikey', 'K', 'mike8@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Mikey', 'K', 'mike8@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('David', 'Malan', 'david2@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('David', 'Malan', 'david2@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Dave', 'M', 'sexy@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Dave', 'M', 'sexy@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Daver', 'Malann', 'david@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
-INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
-INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Dhruv', 'Fakename', 'dhruv2@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Daver', 'Malann', 'david@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Ashley', 'Packtree', 'ashley2@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Dhruv', 'Fakename', 'dhruv2@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Sam', 'Kucharski', 'sam@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Ashley', 'Packtree', 'ashley2@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Hello', 'Patel', 'dhruv5@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Sam', 'Kucharski', 'sam@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Ash', 'Packard', 'ashley4@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Hello', 'Patel', 'dhruv5@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('New', 'Person', 'np@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Ash', 'Packard', 'ashley4@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('LOLNO', 'LastName', 'hahahah@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('New', 'Person', 'np@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Whatis', 'This', 'omg@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('LOLNO', 'LastName', 'hahahah@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('SAD', 'PANDA', 'sad@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Whatis', 'This', 'omg@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Orange', 'Leaf', 'orange@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('SAD', 'PANDA', 'sad@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Cool', 'Aid', 'cool@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Orange', 'Leaf', 'orange@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Google', 'Wallet', 'google@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Cool', 'Aid', 'cool@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Drink', 'The', 'poison@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Google', 'Wallet', 'google@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Sherlock', 'Holmes', 'holmes@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Drink', 'The', 'poison@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('Dr. John', 'Watson', 'NOOO@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Sherlock', 'Holmes', 'holmes@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
-INSERT INTO user(first_name, last_name, email, password, salt) VALUES('MRS', 'HUDSON', 'yelling@gmail.com', '6cfa24d2749f77631027589ed25e48c028158896bb8674db0731622b8af24d49', 'RyWE2qf6kzjdmGswc1wV');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('Dr. John', 'Watson', 'NOOO@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
+INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
+INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');
+INSERT INTO user(first_name, last_name, email, hash) VALUES('MRS', 'HUDSON', 'yelling@gmail.com', '$2y$10$eN0gXNDsPPAde7Vdop.Uhu2pmHw6xEqev8y9nHpGKwtaqHPJ9gSMC');
 INSERT INTO user_info(u_id,hometown,location, school, workplace, birthday, description) VALUES(LAST_INSERT_ID(),'','','','','','');
 INSERT INTO post(u_id, repost_id, message, post_time) VALUES((select max(u_id) from user), -1, 'Mikes Post Fake Post 1', '2013-11-09 14:52:54');

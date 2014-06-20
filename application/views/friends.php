@@ -1,9 +1,9 @@
 <div class="column container">
 	<div class='center col-sm-6 page-header'>
-		<h1>Friends (<?= $friends_count?>)</h1>
+		<h1>Friends (<?= $friends_count; ?>)</h1>
 	</div>
 	 
-	<?php if($friends === null){ ?>
+	<?php if($friends === null || $friends_count == 0){ ?>
 		<p style='text-align:center;'>No friends yet.</p>
 	<?php }else{
 		foreach ($friends as $friend) {?>

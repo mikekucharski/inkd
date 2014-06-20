@@ -22,10 +22,10 @@
 			$query="SELECT u_id, first_name, last_name, email FROM user WHERE u_id IN
 					(SELECT u_idf FROM friend WHERE u_id=$u_id)";
 			$result = $this->db->query($query);
-			if($result !== false && $result->num_rows>0) { 
-
+			if($result !== false && $result->num_rows>=0) { 
+				$data = array();
 				while($row=$result->fetch_assoc()) {$data[] = $row;}
-				return array('data' => $data, 'count' => $result->num_rows);
+				return array('data' => $data, 'count' => strval($result->num_rows));
 			} else {
 				return null;
 			}

@@ -26,6 +26,9 @@
 		require('application/controllers/' . strtolower($controller) .'_controller.php');
 	} else {
 		require('application/controllers/error_controller.php');
+		$ctrl = new ErrorController;
+		$ctrl->index();
+		exit();
 	}
 
 	$ctrlName = $controller."Controller";

@@ -14,7 +14,7 @@
 			Auth::verifyLoggedIn();
 			
 			if( !isset($_GET["u_id"]) || empty($_GET["u_id"]) ){
-				header("location: " . BASE_URL . "404");
+				header("location: " . BASE_URL . "error");
 			}
 
 			$title = "Profile";

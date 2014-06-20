@@ -22,7 +22,7 @@
 	    		require("application/views/templates/footer.php");
 			}else
 			{
-				header('location' . BASE_URL . '404');
+				header('location' . BASE_URL . 'error');
 			}
 			
 		}

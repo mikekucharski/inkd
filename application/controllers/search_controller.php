@@ -11,7 +11,7 @@
 			Auth::verifyLoggedIN();
 			if(!isset($_GET['search']) || empty($_GET['search']))
 			{
-				header("location: " . BASE_URL . "404");
+				header("location: " . BASE_URL . "error");
 				return;
 			}
 			$title = "Search Results";
